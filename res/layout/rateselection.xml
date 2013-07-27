@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+ 
+ 
+ 
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/Age"
+        android:prompt="@string/age_prompt" />
+ 
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/spinner1"
+        android:entries="@array/Tobacco"
+        android:prompt="@string/tobacco_prompt" />
+     <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/spinner2"
+        android:entries="@array/Sex"
+        android:prompt="@string/sex_prompt" />
+
+     <EditText
+         android:id="@+id/editText1"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/spinner3"
+         android:ems="10"
+         android:inputType="textPostalAddress" >
+
+         <requestFocus />
+     </EditText>
+
+     <Button
+         android:onClick="buttonClicked"
+         android:id="@+id/btnSubmit"
+         style="@style/AppTheme"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/editText1"
+         android:text="@android:string/ok" />
+
+</RelativeLayout>
