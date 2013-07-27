@@ -4,8 +4,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
  
 import android.app.Activity;
-import android.app.Application;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +39,8 @@ public class LoginActivity extends Activity {
         // Login button Click Event
         btnLogin.setOnClickListener(new View.OnClickListener() {
  
-            public void onClick(View view) {
+            @Override
+			public void onClick(View view) {
                 String username = inputUsername.getText().toString();
                 String password = inputPassword.getText().toString();
                 UserFunctions userFunction = new UserFunctions();

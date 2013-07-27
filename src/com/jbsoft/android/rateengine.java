@@ -39,6 +39,7 @@ public class rateengine extends Activity{
 			  public void addListenerOnButton() {
 
 				btnSubmit.setOnClickListener(new OnClickListener() {
+					@Override
 					public void onClick(View v) {
 						String zipcodeString = zipcode.getEditableText().toString();
 						String smokerString = smoker_spinner.toString();

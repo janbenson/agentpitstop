@@ -1,8 +1,5 @@
 package com.jbsoft.android;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +45,8 @@ public class DashboardActivity extends Activity {
              // Login button Click Event
              btnsubmissions.setOnClickListener(new View.OnClickListener() {
       
-                 public void onClick(View view) {
+                 @Override
+				public void onClick(View view) {
                 	   TextView dashboardErrorMsg = null;
                      UserFunctions userFunction = new UserFunctions();
 
@@ -71,7 +69,8 @@ public class DashboardActivity extends Activity {
             ); 
              btnrateengine.setOnClickListener(new View.OnClickListener() {
                  
-                 public void onClick(View view) {
+                 @Override
+				public void onClick(View view) {
                      
                 	 Intent rateengine = new Intent(DashboardActivity.this, rateengine.class);
                      

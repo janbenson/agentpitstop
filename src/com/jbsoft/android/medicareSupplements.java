@@ -10,8 +10,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.jbsoft.library.JSONParser;
-import com.jbsoft.library.UserFunctions;
- 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -138,12 +136,14 @@ public class medicareSupplements extends ListActivity{
 		        /**
 		         * After completing background task Dismiss the progress dialog
 		         * **/
-		        protected void onPostExecute(String file_url) {
+		        @Override
+				protected void onPostExecute(String file_url) {
 		            // dismiss the dialog after getting all products
 		            pDialog.dismiss();
 		            // updating UI from Background Thread
 		            runOnUiThread(new Runnable() {
-		                public void run() {
+		                @Override
+						public void run() {
 		                    /**
 		                     * Updating parsed JSON data into ListView
 		                     * */

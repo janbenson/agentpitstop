@@ -152,12 +152,14 @@ public class Policies  extends ListActivity{
 		        /**
 		         * After completing background task Dismiss the progress dialog
 		         * **/
-		        protected void onPostExecute(String file_url) {
+		        @Override
+				protected void onPostExecute(String file_url) {
 		            // dismiss the dialog after getting all products
 		            pDialog.dismiss();
 		            // updating UI from Background Thread
 		            runOnUiThread(new Runnable() {
-		                public void run() {
+		                @Override
+						public void run() {
 		                    /**
 		                     * Updating parsed JSON data into ListView
 		                     * */
