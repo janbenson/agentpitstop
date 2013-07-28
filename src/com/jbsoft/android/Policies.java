@@ -69,9 +69,9 @@ public class Policies  extends ListActivity{
 	 @Override
 		public void onCreate(Bundle savedInstanceState) {
 		        super.onCreate(savedInstanceState);
-		        requestWindowFeature(Window.FEATURE_RIGHT_ICON);
+		        requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		        setContentView(R.layout.policies_list);
-		        setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
+		        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
 		        // Hashmap for ListView
 		        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
 		   

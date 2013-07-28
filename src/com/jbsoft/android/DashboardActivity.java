@@ -36,9 +36,9 @@ public class DashboardActivity extends Activity {
             Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
             startActivity(login);
         	// user already logged in show databoard
-             requestWindowFeature(Window.FEATURE_RIGHT_ICON);
+             requestWindowFeature(Window.FEATURE_LEFT_ICON);
         	 setContentView(R.layout.dashboard); 
-        	 setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
+        	 setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
         	 
         	 // Importing all assets like buttons, text fields
              

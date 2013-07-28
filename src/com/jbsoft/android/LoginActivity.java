@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +28,9 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_LEFT_ICON);
         setContentView(R.layout.apslogin);
+        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
  
         // Importing all assets like buttons, text fields
         inputUsername = (EditText) findViewById(R.id.loginUsername);
