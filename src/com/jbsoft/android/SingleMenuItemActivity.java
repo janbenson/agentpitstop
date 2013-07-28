@@ -16,8 +16,8 @@ public class SingleMenuItemActivity extends Activity{
 	    requestWindowFeature(Window.FEATURE_RIGHT_ICON);
 	    this.setContentView(R.layout.policies_list_item_detail);
         setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
-	    firstname = i.getStringExtra("first");
-	    lastname = i.getStringExtra("last");
+	    firstname = i.getStringExtra("firstname");
+	    lastname = i.getStringExtra("lastname");
 	    company = i.getStringExtra("company");
 	    plan = i.getStringExtra("company");
 	    submitted = i.getStringExtra("submitted");

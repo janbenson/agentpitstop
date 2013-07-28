@@ -18,7 +18,7 @@ public class DashboardActivity extends Activity {
     String startString = null;
     String endString = null;
     String logged_in = null;
-    private static String KEY_POLICY = "policy";
+    private static final String TAG_SELECT = "Selection";
     
 
     @Override
@@ -58,8 +58,8 @@ public class DashboardActivity extends Activity {
                      
                         
                                  // Launch Dashboard Screen
-                                 Intent policies = new Intent(DashboardActivity.this, Policies.class);
-                                  
+                                 Intent policies = new Intent(DashboardActivity.this, MainActivity.class);
+                                 policies.putExtra(TAG_SELECT, "submissions"); 
                                  // Close all views before launching MainActivity
                                  startActivity(policies);
                                   
@@ -75,8 +75,8 @@ public class DashboardActivity extends Activity {
                  @Override
 				public void onClick(View view) {
                      
-                	 Intent rateengine = new Intent(DashboardActivity.this, rateengine.class);
-                     
+                	 Intent rateengine = new Intent(DashboardActivity.this, MainActivity.class);
+                	 rateengine.putExtra(TAG_SELECT, "rateengine");
                      startActivity(rateengine);
                      // Closing dashboard screen
                     finish();}}
