@@ -7,7 +7,7 @@
     <!-- First,Last Names -->
     <TextView
         android:id="@+id/first"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8sp"
         android:paddingLeft="8sp"
@@ -16,22 +16,22 @@
         android:textStyle="bold" />
     <TextView
         android:id="@+id/last"
-        android:layout_width="wrap_content"
+       android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8sp"
         android:paddingLeft="8sp"
         android:paddingBottom="4sp"
         android:textSize="20sp"
         android:textStyle="bold" 
-        android:layout_toRightOf="@id/first"/>    
+         android:layout_below="@id/first"/>    
     <!-- Company  -->
     <TextView android:id="@+id/company"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:paddingLeft="8sp"
         android:paddingBottom="6sp"
         android:textSize="15sp"
-        android:layout_below="@id/first"/>
+        android:layout_below="@id/last"/>
 
     <TextView
         android:id="@+id/plan"
@@ -52,7 +52,7 @@
         android:paddingBottom="4sp"
         android:textSize="15sp"
         android:textStyle="bold" 
-        android:layout_toRightOf="@id/plan"/>    
+         android:layout_below="@id/plan"/>    
     <!-- Company  -->
     <TextView android:id="@+id/submitted"
         android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
         android:paddingLeft="8sp"
         android:paddingBottom="6sp"
         android:textSize="15sp"
-        android:layout_below="@id/plan"/>
+        android:layout_below="@id/status"/>
     <TextView android:id="@+id/effective"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

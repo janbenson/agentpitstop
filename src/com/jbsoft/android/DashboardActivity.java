@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 import android.widget.TextView;
@@ -35,8 +36,10 @@ public class DashboardActivity extends Activity {
             Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
             startActivity(login);
         	// user already logged in show databoard
-
-        	 setContentView(R.layout.dashboard);
+             requestWindowFeature(Window.FEATURE_RIGHT_ICON);
+        	 setContentView(R.layout.dashboard); 
+        	 setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
+        	 
         	 // Importing all assets like buttons, text fields
              
         	 btnsubmissions = (Button) findViewById(R.id.btnsubmissions);
