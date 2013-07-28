@@ -43,7 +43,9 @@
         <activity 
             android:name=".rateActivity" />   
         <activity 
-            android:name=".Policies" />       
+            android:name=".Policies" /> 
+        <activity 
+             android:name=".SingleMenuItemActivity" />         
         <activity
             android:name=".MainActivity"  />   
         

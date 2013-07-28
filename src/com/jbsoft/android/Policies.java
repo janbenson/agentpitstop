@@ -11,11 +11,17 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.jbsoft.library.JSONParser;
 
@@ -31,6 +37,7 @@ public class Policies  extends ListActivity{
     // products JSONArray
     JSONArray policylist = null;	
     ArrayList<HashMap<String, String>> policies_List = new ArrayList<HashMap<String, String>>(); 
+    ArrayList<String> policy_list = new ArrayList<String>();
     // url to make request
     private static String loginpreloadURL = "http://api.agentpitstop.com/mobile/authenticate.php?action=login&username=Janet%20B%20Benson&password=jb54password";
     
@@ -134,12 +141,29 @@ public class Policies  extends ListActivity{
 		 
 		                    // adding each child node to HashMap key => value
 		                    map.put(TAG_FIRST, firstname);
+		                   
 		                    map.put(TAG_LAST, last);
 		                    map.put(TAG_COMPANY,company);
+		                    map.put(TAG_PRODUCERID, producerid);
+		                    map.put(TAG_PLAN, plan);
+		                    map.put(TAG_POLICYID,policyid);
+		                    map.put(TAG_POLICYNUMBER, policynumber);
+		                    map.put(TAG_STATUS, status);
+		                    map.put(TAG_SUBMITTED,submitted);
+		                    map.put(TAG_EFFECTIVE, effective);
+		                    map.put(TAG_ADDED, added);
+		                    map.put(TAG_TERMINATION,termination);
+		                    map.put(TAG_GUID, guid);
+		                    map.put(TAG_CLIENTID, clientid);
+		                    map.put(TAG_POLICYTYPE, policytype);
+		                    map.put(TAG_PRIMARYAGENT, primaryagent);
+		                    map.put(TAG_POLICYPRODUCER, policyproducer);
+		                    
 		                    
 		 
 		                    // adding HashList to ArrayList
 		                    policies_List.add(map);
+		                    
 		                }
 		 
 	            } catch (JSONException e) {
@@ -170,11 +194,48 @@ public class Policies  extends ListActivity{
 		                            new int[] {R.id.first,R.id.last, R.id.company});
 		                    // updating listview
 		                    setListAdapter(adapter);
+		                    
+		                    // selecting single ListView item
+			                ListView lv = getListView();
+					         
+			                // Launching new screen on Selecting Single ListItem
+			                lv.setOnItemClickListener(new OnItemClickListener() {
+			         
+			                    @Override
+			                    public void onItemClick(AdapterView<?> parent, View view,
+			                            int position, long id) {
+			                        // getting values from selected ListItem
+			                        String first = ((TextView) view.findViewById(R.id.first)).getText().toString();
+			                        String last = ((TextView) view.findViewById(R.id.last)).getText().toString();
+			                        String company = ((TextView) view.findViewById(R.id.company)).getText().toString();
+			                        String plan = policies_List.get(position).get(TAG_PLAN);
+			                        // Starting new intent
+			                        Intent in = new Intent(Policies.this, SingleMenuItemActivity.class);
+			                        in.putExtra(TAG_FIRST, first);
+			                        in.putExtra(TAG_LAST, last);
+			                        in.putExtra(TAG_COMPANY, company);
+			                        in.putExtra(TAG_PLAN, policies_List.get(position).get(TAG_PLAN));
+			                        in.putExtra(TAG_SUBMITTED, policies_List.get(position).get(TAG_SUBMITTED));
+			                        in.putExtra(TAG_STATUS, policies_List.get(position).get(TAG_STATUS));
+			                        in.putExtra(TAG_EFFECTIVE, policies_List.get(position).get(TAG_EFFECTIVE));
+			                        in.putExtra(TAG_PLAN, policies_List.get(position).get(TAG_PLAN));
+			                        in.putExtra(TAG_PLAN, policies_List.get(position).get(TAG_PLAN));
+			                        in.putExtra(TAG_PLAN, policies_List.get(position).get(TAG_PLAN));
+			                        in.putExtra(TAG_PLAN, policies_List.get(position).get(TAG_PLAN));
+			                        
+			                        startActivity(in);
+			                    }
+
+								
+			                });
+		                    
 		                }
-		            });
+		            }
+                  );
 		 
 		        }
-		 
+		
 		    }
+		    
 		}
 	

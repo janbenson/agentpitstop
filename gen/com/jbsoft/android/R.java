@@ -60,16 +60,17 @@ public final class R {
         public static final int vb2=0x7f020017;
     }
     public static final class id {
-        public static final int btnLinkToLoginScreen=0x7f090018;
+        public static final int btnLinkToLoginScreen=0x7f09001b;
         public static final int btnLinkToRegisterScreen=0x7f090004;
         public static final int btnLogin=0x7f090003;
-        public static final int btnRegister=0x7f090017;
-        public static final int btnSubmit=0x7f090011;
+        public static final int btnRegister=0x7f09001a;
+        public static final int btnSubmit=0x7f090014;
         public static final int btnrateengine=0x7f090006;
         public static final int btnsubmissions=0x7f090005;
         public static final int company=0x7f090007;
-        public static final int editText1=0x7f090010;
-        public static final int editText2=0x7f09000d;
+        public static final int editText1=0x7f090013;
+        public static final int editText2=0x7f090010;
+        public static final int effective=0x7f09000f;
         public static final int first=0x7f09000b;
         public static final int last=0x7f09000c;
         public static final int loginPassword=0x7f090001;
@@ -78,13 +79,15 @@ public final class R {
         public static final int payoption=0x7f09000a;
         public static final int plan=0x7f090008;
         public static final int rate=0x7f090009;
-        public static final int registerEmail=0x7f090014;
-        public static final int registerName=0x7f090013;
-        public static final int registerPassword=0x7f090015;
-        public static final int register_error=0x7f090016;
-        public static final int spinner1=0x7f090012;
-        public static final int spinner2=0x7f09000e;
-        public static final int spinner3=0x7f09000f;
+        public static final int registerEmail=0x7f090017;
+        public static final int registerName=0x7f090016;
+        public static final int registerPassword=0x7f090018;
+        public static final int register_error=0x7f090019;
+        public static final int spinner1=0x7f090015;
+        public static final int spinner2=0x7f090011;
+        public static final int spinner3=0x7f090012;
+        public static final int status=0x7f09000d;
+        public static final int submitted=0x7f09000e;
     }
     public static final class layout {
         public static final int apslogin=0x7f030000;
@@ -95,12 +98,13 @@ public final class R {
         public static final int medsupp_list_item=0x7f030005;
         public static final int policies_list=0x7f030006;
         public static final int policies_list_item=0x7f030007;
-        public static final int policy_list=0x7f030008;
-        public static final int rateactivity=0x7f030009;
-        public static final int rateengine=0x7f03000a;
-        public static final int ratereports=0x7f03000b;
-        public static final int rateselection=0x7f03000c;
-        public static final int register=0x7f03000d;
+        public static final int policies_list_item_detail=0x7f030008;
+        public static final int policy_list=0x7f030009;
+        public static final int rateactivity=0x7f03000a;
+        public static final int rateengine=0x7f03000b;
+        public static final int ratereports=0x7f03000c;
+        public static final int rateselection=0x7f03000d;
+        public static final int register=0x7f03000e;
     }
     public static final class string {
         public static final int Password=0x7f060007;
