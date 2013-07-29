@@ -1,5 +1,9 @@
 package com.jbsoft.android;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
  
@@ -20,6 +24,7 @@ public class LoginActivity extends Activity {
     EditText inputUsername;
     EditText inputPassword;
     TextView loginErrorMsg;
+    private static String loginURL = "http://api.agentpitstop.com/mobile/authenticate.php";
  
     // JSON Response node names
     private static String KEY_SUCCESS = "success";
@@ -46,18 +51,30 @@ public class LoginActivity extends Activity {
 			public void onClick(View view) {
                 String username = inputUsername.getText().toString();
                 String password = inputPassword.getText().toString();
+             	String temp = username;
+        		temp = temp.replaceAll(" ", "%20");
+        		username = temp;
+                String parmaction = "?action=login";
+                String parmusername = "&username=";
+                parmusername = parmusername + username;
+                String parmpassword = "&password=";
+                parmpassword = parmpassword + password;
+                String parms = parmaction + parmusername + parmpassword;
+                loginURL = loginURL + parms;
+                GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
+                apploginurl.setState(loginURL);
+                
+                
+                
                 UserFunctions userFunction = new UserFunctions();
                 JSONObject json = userFunction.loginUser(username, password);
  
                 // check for login response
                 try {
                       if (json.getString(KEY_SUCCESS) != null) {
+                    	
                             String logged_in = null;  
-                            // Launch Dashboard Screen
-                            
-                             
-                            // Close Login Screen
-                            finish();
+                                finish();
 
                         }else{
                             // Error in login
@@ -80,4 +97,12 @@ public class LoginActivity extends Activity {
             }
         });*/
     }
+    @Override
+    protected void onRestart() {
+        // TODO Auto-generated method stub
+        super.onRestart();
+        if(DashboardActivity.isQuit)
+            finish();
+    }
+
 }

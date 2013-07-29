@@ -47,21 +47,29 @@ public class UserFunctions {
      * @param password
      * */
     public JSONObject loginUser(String username, String password){
-        // Building Parameters
-        String parmaction = "?action=login";
-        String parmusername = "&username=";
-        parmusername = parmusername + username;
-        String parmpassword = "&password=";
-        parmpassword = parmpassword + password;
-        String parms = parmaction + parmusername + parmpassword;
-        //loginURL = loginURL + parms;
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("action", login_tag));
+    	String temp = username;
+    		temp = temp.replaceAll(" ", "%20");
+    		username = temp;
+         List<NameValuePair> params = new ArrayList<NameValuePair>();
+         // Building Parameters
+         String parmaction = "?action=login";
+         String parmusername = "&username=";
+         parmusername = parmusername + username;
+         String parmpassword = "&password=";
+         parmpassword = parmpassword + password;
+         String parms = parmaction + parmusername + parmpassword;
+         loginURL = loginURL + parms;
+
+        /*params.add(new BasicNameValuePair("action", login_tag));
         params.add(new BasicNameValuePair("username", username));
         params.add(new BasicNameValuePair("password", password));
-        JSONObject json = jsonParser.getJSONFromUrl(loginpreloadURL, params);
+        JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);*/
+         JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+         
+         //JSONObject json = jsonParser.getJSONFromUrl(loginpreloadURL, params);
           // return json
         // Log.e("JSON", json.toString());
+         
         return json;
     }
     public JSONObject getRates(String ageString, String zipString,String sexString){

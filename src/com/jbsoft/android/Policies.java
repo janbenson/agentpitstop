@@ -23,7 +23,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
+import com.jbsoft.library.UserFunctions;
 import com.jbsoft.library.JSONParser;
 
 public class Policies  extends ListActivity{
@@ -32,6 +32,7 @@ public class Policies  extends ListActivity{
  
     // Creating JSON Parser object
     JSONParser jsonParser = new JSONParser();
+
  
    
  
@@ -107,7 +108,12 @@ public class Policies  extends ListActivity{
 		            // Hashmap for ListView
 				    
 		            // getting JSON string from URL
-		            JSONObject json1 = jsonParser.getJSONFromUrl(loginpreloadURL, params);
+		            
+	                GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
+	                apploginurl.getState();
+	                
+	                
+		            JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
 		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(policiespreloadURL, params);
 		 
 		            // Check your log cat for JSON response  // Hashmap for ListView

@@ -18,19 +18,18 @@ public class DashboardActivity extends Activity {
     String startString = null;
     String endString = null;
     String logged_in = null;
+    String exit = "";
     private static final String TAG_SELECT = "Selection";
-    
+    public static boolean isQuit = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle extras = getIntent().getExtras();
-    
         /**
          * Dashboard Screen for the application
          * */       
         // Check login status in database
-        userFunctions = new UserFunctions();
+            userFunctions = new UserFunctions();
     
             // user is not logged in show login screen
             Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
@@ -50,24 +49,19 @@ public class DashboardActivity extends Activity {
       
                  @Override
 				public void onClick(View view) {
-                	   TextView dashboardErrorMsg = null;
+                	 TextView dashboardErrorMsg = null;
                      UserFunctions userFunction = new UserFunctions();
 
       
                      // check for login response
-                     
-                        
+
                                  // Launch Dashboard Screen
                                  Intent policies = new Intent(DashboardActivity.this, MainActivity.class);
                                  policies.putExtra(TAG_SELECT, "submissions"); 
                                  // Close all views before launching MainActivity
                                  startActivity(policies);
-                                  
                                  // Close Login Screen
-                                 finish();
-            
-                             
-                    
+                                 DashboardActivity.isQuit = true;
                  }}
             ); 
              btnrateengine.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +73,14 @@ public class DashboardActivity extends Activity {
                 	 rateengine.putExtra(TAG_SELECT, "rateengine");
                      startActivity(rateengine);
                      // Closing dashboard screen
-                    finish();}}
+                     DashboardActivity.isQuit = true;
+                     finish();
+}}
+             
                      ); 
                 
     }
+    
+   
+        
 }
