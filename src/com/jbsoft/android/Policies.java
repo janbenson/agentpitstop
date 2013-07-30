@@ -167,9 +167,7 @@ public class Policies  extends ListActivity{
 		                    map.put(TAG_POLICYTYPE, policytype);
 		                    map.put(TAG_PRIMARYAGENT, primaryagent);
 		                    map.put(TAG_POLICYPRODUCER, policyproducer);
-		                    
-		                    
-		 
+		  
 		                    // adding HashList to ArrayList
 		                    policies_List.add(map);
 		                    

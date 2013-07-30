@@ -10,47 +10,93 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.jbsoft.library.JSONParser;
+import com.jbsoft.library.UserFunctions;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;;
+import android.widget.ListView;
+import android.widget.SimpleAdapter; 
+import android.widget.TextView;
 public class medicareSupplements extends ListActivity{
 	// Progress Dialog
     private ProgressDialog pDialog;
  
     // Creating JSON Parser object
     JSONParser jsonParser = new JSONParser();
- 
+    ArrayList<HashMap<String, String>> medsupps_List = new ArrayList<HashMap<String, String>>(); 
     ArrayList<HashMap<String, String>> medsupp_List;
  
     // products JSONArray
     JSONArray medsupps = null;	 
     // url to make request
+    
     private static String loginpreloadURL = "http://api.agentpitstop.com/mobile/authenticate.php?action=login&username=Janet%20B%20Benson&password=jb54password";
     
-    private static String RATES_URL = "http://api.agentpitstop.com/mobile/rates.php?action=rates&age=76&zip=94561&sex=male&plan=F";
+    private static String RATES_URL = "http://api.agentpitstop.com/mobile/rates.php";
+    private static String PRELOADRATES_URL = "http://api.agentpitstop.com/mobile/rates.php?action=rates&age=76&zip=94561&sex=male&plan=F";
 
 	// JSON Node names
 	private static final String TAG_ID = "id";
 	private static final String TAG_COMPANY = "company";
 	private static final String TAG_PLAN = "plan";
 	private static final String TAG_PAYOPTION = "payoption";
+	private static final String TAG_ZIP = "zip";
+	private static final String TAG_COUNTY = "county";
 	private static final String TAG_STATE = "state";
 	private static final String TAG_SEX = "sex";
 	private static final String TAG_AGE = "age";
-	private static final String TAG_SMOKER = "tobacco";
+	private static final String TAG_PARTB = "partb";
+	private static final String TAG_SMOKER = "smoker";
 	private static final String TAG_RATE = "rate";
 	private static final String TAG_DATE= "date";
-	
+	private static final String TAG_RECRUIT= "recruit";
+		
 	// contacts JSONArray
 	JSONArray rates = null;
-
+	String Sex = null;
+	String Age = null;
+	String Zip = null;
+	String Smoker = null;
+	String Plan = null;
 		 @Override
 		public void onCreate(Bundle savedInstanceState) {
 		        super.onCreate(savedInstanceState);
+		    	Intent i = getIntent();
+		        Sex= i.getStringExtra("sex");
+		        if (Sex == null){ Sex = "male";};
+		        Age= i.getStringExtra("age");
+		        if (Age == null){ Age = "65";};
+		        Zip= i.getStringExtra("zip");
+		        if (Zip == null){ Zip = "94518";};
+		        Smoker= i.getStringExtra("smoker");
+		        if (Smoker == null){ Smoker = "Non-Smoker";};
+		        
+
+		        String parmaction = "?action=rates";
+	            String parmage = "&age=";
+	            parmage = parmage + Age;
+	            String parmzip = "&zip=";
+	            parmzip = parmzip + Zip;
+	            String parmsex = "&sex=";
+	            parmsex = parmsex + Sex;
+	            String parmplan = "&plan=";
+	            parmplan = parmplan + "F";
+	            String parmsmoker = "&smoker=";
+	            parmsmoker = parmsmoker + Smoker;
+	           //String parms = parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
+	            RATES_URL = RATES_URL + parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
+		        
+		        
+		        
+		        
 		        setContentView(R.layout.medsupp_list);
 		        // Hashmap for ListView
 		        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
@@ -85,16 +131,19 @@ public class medicareSupplements extends ListActivity{
 		        protected String doInBackground(String... args) {
 		            // Building Parameters
 		            List<NameValuePair> params = new ArrayList<NameValuePair>();
-		             
+		            GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
+	                apploginurl.getState(); 
 		            // getting JSON string from URL
-		            JSONObject json1 = jsonParser.getJSONFromUrl(loginpreloadURL, params);
+		            JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
+		            
 		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(RATES_URL, params);
+		            String temp;
 		 
 		            // Check your log cat for JSON reponse
 		            Log.d("medicareSupplements JSON: ", json2.toString());
 		 
 		            try {
-		                medsupps = json2.getJSONArray("id");
+		                medsupps = json2.getJSONArray("rates");
 		                // looping through All messages
 		                for (int i = 0; i < medsupps.length(); i++) {
 		                    JSONObject c = medsupps.getJSONObject(i);
@@ -102,28 +151,59 @@ public class medicareSupplements extends ListActivity{
 		                    // Storing each json item in variable
 		                    String id = c.getString(TAG_ID);
 		                    String company = c.getString(TAG_COMPANY);
-		                    String rate = c.getString(TAG_RATE);
 		                    String plan = c.getString(TAG_PLAN);
-		                    String age = c.getString(TAG_AGE);
-		                    String sex = c.getString(TAG_SEX);
-		                    String tobacco = c.getString(TAG_SMOKER);
-		                    String state = c.getString(TAG_STATE);
 		                    String payoption = c.getString(TAG_PAYOPTION);
+		                    String zip = c.getString(TAG_ZIP);
+		                    temp = zip.replaceAll("", "all");
+		                    zip = temp;
+		                    temp="";
+		                    String county = c.getString(TAG_COUNTY);
+		                    temp = county.replaceAll("", "all");
+		                    county = temp;
+		                    temp="";
+		                    String sex = c.getString(TAG_SEX);
+		                    temp = sex.replaceAll("", "none");
+		                    sex = temp;
+		                    temp="";
+		                    String age = c.getString(TAG_AGE);
+		                    temp = age.replaceAll("", "none");
+		                    age = temp;
+		                    temp="";
+		                    String partb = c.getString(TAG_PARTB);
+		                    temp = partb.replaceAll("", "none");
+		                    partb = temp;
+		                    temp="";
+		                    String smoker = c.getString(TAG_SMOKER);
+		                    temp = smoker.replaceAll("", "none");
+		                    smoker = temp;
+		                    temp="";
+		                    String rate = c.getString(TAG_RATE);
 		                    String date = c.getString(TAG_DATE);
-		 
+		                    String recruit = c.getString(TAG_RECRUIT);
+		                    temp = recruit.replaceAll("", "none");
+		                    recruit = temp;
+		                    temp="";
 		                    // creating new HashMap
 		                    HashMap<String, String> map = new HashMap<String, String>();
 		 
 		                    // adding each child node to HashMap key => value
-		                    map.put(TAG_ID, id);
+		                    map.put(TAG_ID,id);
 		                    map.put(TAG_COMPANY,company);
 		                    map.put(TAG_PLAN, plan);
-		                    map.put(TAG_RATE,rate);
 		                    map.put(TAG_PAYOPTION ,payoption);
-
-		 
+		                    map.put(TAG_ZIP,zip);
+		                    map.put(TAG_COUNTY, county);
+		                    map.put(TAG_STATE ,payoption);
+		                    map.put(TAG_SEX,company);
+		                    map.put(TAG_AGE, age);
+		                    map.put(TAG_PARTB ,partb);
+		                    map.put(TAG_SMOKER,smoker);
+		                    map.put(TAG_RATE,rate);
+		                    map.put(TAG_DATE, date);
+		                    map.put(TAG_RECRUIT ,recruit);
+		                    
 		                    // adding HashList to ArrayList
-		                    medsupp_List.add(map);
+		                    medsupps_List.add(map);
 		                }
 		 
 	            } catch (JSONException e) {
@@ -137,7 +217,7 @@ public class medicareSupplements extends ListActivity{
 		         * After completing background task Dismiss the progress dialog
 		         * **/
 		        @Override
-				protected void onPostExecute(String file_url) {
+		        protected void onPostExecute(String file_url) {
 		            // dismiss the dialog after getting all products
 		            pDialog.dismiss();
 		            // updating UI from Background Thread
@@ -147,16 +227,49 @@ public class medicareSupplements extends ListActivity{
 		                    /**
 		                     * Updating parsed JSON data into ListView
 		                     * */
-		                    ListAdapter adapter = new SimpleAdapter(
-		                            medicareSupplements.this, medsupp_List,
+                                    ListAdapter adapter = new SimpleAdapter(
+		                            medicareSupplements.this, medsupps_List,
 		                            R.layout.medsupp_list_item, new String[] { TAG_COMPANY, TAG_PLAN, TAG_RATE,TAG_PAYOPTION},
 		                            new int[] { R.id.company, R.id.plan, R.id.rate,R.id.payoption });
+		                  
 		                    // updating listview
 		                    setListAdapter(adapter);
+		                    
+		                    /*   ListView lv = getListView();
+					         
+			                // Launching new screen on Selecting Single ListItem
+			                lv.setOnItemClickListener(new OnItemClickListener() {
+			         
+			                    @Override
+			                    public void onItemClick(AdapterView<?> parent, View view,
+			                            int position, long id) {
+			                        // getting values from selected ListItem
+			                        String company = ((TextView) view.findViewById(R.id.company)).getText().toString();
+			                    	String plan = ((TextView) view.findViewById(R.id.plan)).getText().toString();
+			                        String rate = ((TextView) view.findViewById(R.id.rate)).getText().toString();
+			                        String payoption = ((TextView) view.findViewById(R.id.rate)).getText().toString();
+		
+			                        // Starting new intent
+			                        Intent in = new Intent(medicareSupplements.this, SingleMenuItemActivityMedSupps.class);
+
+			                        in.putExtra(TAG_COMPANY, company);
+			                        in.putExtra(TAG_PLAN, medsupp_List.get(position).get(TAG_PLAN));
+			                        in.putExtra(TAG_RATE, rate);
+			                        in.putExtra(TAG_PAYOPTION, payoption);
+			                        startActivity(in);
+			                    }
+
+
+								
+			                });*/
+		                    
 		                }
-		            });
+		            }
+                  );
 		 
 		        }
-		 
+		
 		    }
+		    
 		}
+	

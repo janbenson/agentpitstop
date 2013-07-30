@@ -65,45 +65,48 @@ public class MainActivity extends TabActivity {
     		tabHost.addTab(tabSpecRateengine);
     		tabHost.addTab(tabSpecSubmit);
     		tabHost.addTab(tabSpecExit);
-    		
+
     		
             }		
           else{
-		// Medicare Supplements
-		Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
-		TabSpec tabSpecSupps = tabHost
-			.newTabSpec("Medicare Supplements")
-			.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
-			.setContent(intentSupps);
-
-		// Medicare Advantage tab
-		Intent intentAdv = new Intent().setClass(this, medicareAdvantage.class);
-		TabSpec tabSpecAdv = tabHost
-			.newTabSpec("Medicare Advantage")
-			.setIndicator("", resources.getDrawable(R.drawable.icon_medadv_config))
-			.setContent(intentAdv);
-		
-		// Perscription Drug Plan tab
-		Intent intentPerscrip = new Intent();
-		TabSpec tabSpecPdp = tabHost
-			.newTabSpec("Perscription Drug Plan")
-			.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
-			.setContent(intentPerscrip);
-		
-		// RateEngine tab
+        	// RateEngine tab
 				Intent intentRate = new Intent().setClass(this, rateengine.class);
 				TabSpec tabSpecRateengine = tabHost
 					.newTabSpec("Change Rate")
 					.setIndicator("", resources.getDrawable(R.drawable.icon_rateengine_config))
-					.setContent(intentRate);
+					.setContent(intentRate);	 
+				
+			// Medicare Supplements
+			Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
+			TabSpec tabSpecSupps = tabHost
+				.newTabSpec("Medicare Supplements")
+				.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
+				.setContent(intentSupps);
+	
+			// Medicare Advantage tab
+			Intent intentAdv = new Intent().setClass(this, medicareAdvantage.class);
+			TabSpec tabSpecAdv = tabHost
+				.newTabSpec("Medicare Advantage")
+				.setIndicator("", resources.getDrawable(R.drawable.icon_medadv_config))
+				.setContent(intentAdv);
+			
+			// Perscription Drug Plan tab
+			Intent intentPerscrip = new Intent();
+			TabSpec tabSpecPdp = tabHost
+				.newTabSpec("Perscription Drug Plan")
+				.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
+				.setContent(intentPerscrip);
+		
+		
 		// add all tabs 
+		tabHost.addTab(tabSpecRateengine);	
 		tabHost.addTab(tabSpecSupps);
 		tabHost.addTab(tabSpecAdv);
 		tabHost.addTab(tabSpecPdp);
-		tabHost.addTab(tabSpecRateengine);
+		
         }		
 		//set Windows tab as default (zero based)
-		tabHost.setCurrentTab(0);
+        tabHost.setCurrentTab(0);
 	}
 	
 	 @Override

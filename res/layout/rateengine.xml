@@ -15,9 +15,12 @@
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal">
 
-		<EditText android:id="@+id/editText2" android:layout_width="match_parent"
-			android:layout_height="wrap_content" android:inputType="text"
-			android:prompt="@string/age_prompt" />
+		<EditText
+		    android:id="@+id/editText2"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:inputType="text|none"
+		    android:prompt="@string/age_prompt" />
 
 		<Spinner android:id="@+id/spinner2" android:layout_width="match_parent"
 			android:layout_height="wrap_content" android:layout_below="@+id/editText2"
