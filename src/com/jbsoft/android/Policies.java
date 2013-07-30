@@ -23,7 +23,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import com.jbsoft.library.UserFunctions;
 import com.jbsoft.library.JSONParser;
 
 public class Policies  extends ListActivity{
@@ -41,8 +40,7 @@ public class Policies  extends ListActivity{
     ArrayList<HashMap<String, String>> policies_List = new ArrayList<HashMap<String, String>>(); 
     ArrayList<String> policy_list = new ArrayList<String>();
     // url to make request
-    private static String loginpreloadURL = "http://api.agentpitstop.com/mobile/authenticate.php?action=login&username=Janet%20B%20Benson&password=jb54password";
-    
+     
     private static String policiespreloadURL = "http://api.agentpitstop.com/mobile/policies.php?action=status&start=2010-01-01&end=2013-12-31";
 	// JSON Node names
 	private static final String TAG_POLICIES = "policies";
@@ -57,7 +55,7 @@ public class Policies  extends ListActivity{
 	private static final String TAG_SUBMITTED= "submitted";
 	private static final String TAG_EFFECTIVE= "effective";
 	private static final String TAG_ADDED= "added";
-	private static final String TAG_CHANGED= "changed";
+//	private static final String TAG_CHANGED= "changed";
 	private static final String TAG_TERMINATION= "termination";
 	private static final String TAG_GUID= "guid";
 	private static final String TAG_CLIENTID= "clientid";
@@ -113,7 +111,8 @@ public class Policies  extends ListActivity{
 	                apploginurl.getState();
 	                
 	                
-		            JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
+		            @SuppressWarnings("unused")
+					JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
 		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(policiespreloadURL, params);
 		 
 		            // Check your log cat for JSON response  // Hashmap for ListView
@@ -138,7 +137,7 @@ public class Policies  extends ListActivity{
 		                    String submitted = c.getString(TAG_SUBMITTED);
 		                    String effective = c.getString( TAG_EFFECTIVE);
 		                    String added = c.getString(TAG_ADDED);
-		                    String changed = c.getString(TAG_CHANGED);
+		               //     String changed = c.getString(TAG_CHANGED);
 		                    String termination = c.getString(TAG_TERMINATION);
 		                    String guid = c.getString(TAG_GUID);
 		                    String clientid = c.getString(TAG_CLIENTID);
@@ -215,7 +214,8 @@ public class Policies  extends ListActivity{
 			                        String first = ((TextView) view.findViewById(R.id.first)).getText().toString();
 			                        String last = ((TextView) view.findViewById(R.id.last)).getText().toString();
 			                        String company = ((TextView) view.findViewById(R.id.company)).getText().toString();
-			                        String plan = policies_List.get(position).get(TAG_PLAN);
+			                        @SuppressWarnings("unused")
+									String plan = policies_List.get(position).get(TAG_PLAN);
 			                        // Starting new intent
 			                        Intent in = new Intent(Policies.this, SingleMenuItemActivity.class);
 			                        in.putExtra(TAG_FIRST, first);
@@ -227,8 +227,6 @@ public class Policies  extends ListActivity{
 			                        in.putExtra(TAG_EFFECTIVE, policies_List.get(position).get(TAG_EFFECTIVE));
 			                        startActivity(in);
 			                    }
-
-								
 			                });
 		                    
 		                }

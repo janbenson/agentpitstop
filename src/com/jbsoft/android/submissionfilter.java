@@ -11,14 +11,16 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import com.jbsoft.library.UserFunctions;
+
 
 public class submissionfilter extends Activity{
 
 	private Spinner sex_spinner, smoker_spinner;
+	@SuppressWarnings("unused")
 	private EditText zipcode,age;
 	private Button btnSubmit;
-	 @Override
+	 @SuppressWarnings("unused")
+	@Override
 	  public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState);
 			setContentView(R.layout.rateengine);
@@ -41,11 +43,7 @@ public class submissionfilter extends Activity{
 				btnSubmit.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						String zipcodeString = zipcode.getEditableText().toString();
-						String smokerString = smoker_spinner.toString();
-						String sexString = sex_spinner.toString();
-						String ageString = age.getEditableText().toString();
-						UserFunctions userFunction = new UserFunctions();
+						
 						  Intent i = new Intent( submissionfilter.this, medicareSupplements.class );
 						  startActivity( i );
 					}

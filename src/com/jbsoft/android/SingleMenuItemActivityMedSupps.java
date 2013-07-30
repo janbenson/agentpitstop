@@ -7,8 +7,10 @@ import android.view.Window;
 import android.widget.TextView;
 
 public class SingleMenuItemActivityMedSupps extends Activity{
+	@SuppressWarnings("unused")
 	private String rate,company,payplan,plan;
 
+	@SuppressWarnings("unused")
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    Intent i = getIntent();

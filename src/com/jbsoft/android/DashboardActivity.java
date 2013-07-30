@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import android.widget.TextView;
+
  
 import com.jbsoft.library.UserFunctions;
  
@@ -49,9 +49,7 @@ public class DashboardActivity extends Activity {
       
                  @Override
 				public void onClick(View view) {
-                	 TextView dashboardErrorMsg = null;
-                     UserFunctions userFunction = new UserFunctions();
-
+                
       
                      // check for login response
 

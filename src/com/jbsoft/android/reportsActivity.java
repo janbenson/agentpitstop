@@ -10,7 +10,7 @@ import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
-public class MainActivity extends TabActivity {
+public class reportsActivity extends TabActivity {
 	String Selects = null;
 
 	@Override
@@ -21,9 +21,19 @@ public class MainActivity extends TabActivity {
         setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
 		Intent i = getIntent();
         Selects= i.getStringExtra("Selection");
+        
+    	Integer selectedtab = 0;
+
+
         Resources resources = getResources(); 
-		TabHost tabHost = getTabHost(); 
-		tabHost.getTabWidget().setStripEnabled(false);
+    		TabHost tabHost = getTabHost(); 
+    		tabHost.getTabWidget().setStripEnabled(false);
+    		GlobalVariable nextGlobalVariable = ((GlobalVariable)getApplicationContext());
+    		try {
+    		     selectedtab = Integer.parseInt(nextGlobalVariable.getNextTabActivity());
+		    	     } catch(NumberFormatException nfe) {
+		    	        System.out.println("Could not parse " + nfe);
+		    	     } 
         if (Selects.contentEquals("submissions")) {
         	// Policy Submission
     		Intent intentPolicies = new Intent().setClass(this, Policies.class);
@@ -63,7 +73,7 @@ public class MainActivity extends TabActivity {
     		tabHost.addTab(tabSpecRateengine);
     		tabHost.addTab(tabSpecSubmit);
     		tabHost.addTab(tabSpecExit);
-    		tabHost.setCurrentTab(0);
+    		tabHost.setCurrentTab(selectedtab);
     		
             }		
           else{
@@ -104,7 +114,7 @@ public class MainActivity extends TabActivity {
 		
         }		
 		//set Windows tab as default (zero based)
-        tabHost.setCurrentTab(0);
+        tabHost.setCurrentTab(selectedtab);
 	}
 	
 	 @Override

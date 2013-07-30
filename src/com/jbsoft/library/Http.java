@@ -43,6 +43,7 @@ public class Http {
 		 */
 		
 	
+		@SuppressWarnings({ "unused", "null" })
 		public static void setContext() throws ClientProtocolException, IOException
 		{
 			// Create a local instance of cookie store
@@ -63,6 +64,7 @@ public class Http {
 			localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
 		}
 
+		@SuppressWarnings("null")
 		public static void getPage(String url) throws Exception
 		{
 		    request = new HttpGet(url);
@@ -83,6 +85,7 @@ public class Http {
 	   
 	        return httpClient;
 	}
+		@SuppressWarnings("null")
 		public static HttpResponse postPage(List<NameValuePair> params, String host, String action) throws Exception {
 		
 		    post = new HttpPost(host + action);
@@ -109,6 +112,7 @@ public class Http {
 		    return client;
 		}
 		
+		@SuppressWarnings("null")
 		public void destoyHttp()
 		{
 			AbstractHttpClient client = null;

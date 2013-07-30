@@ -10,21 +10,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.jbsoft.library.JSONParser;
-import com.jbsoft.library.UserFunctions;
-
+ 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.SimpleAdapter; 
-import android.widget.TextView;
 public class medicareSupplements extends ListActivity{
 	// Progress Dialog
     private ProgressDialog pDialog;
@@ -38,11 +31,9 @@ public class medicareSupplements extends ListActivity{
     JSONArray medsupps = null;	 
     // url to make request
     
-    private static String loginpreloadURL = "http://api.agentpitstop.com/mobile/authenticate.php?action=login&username=Janet%20B%20Benson&password=jb54password";
-    
+   
     private static String RATES_URL = "http://api.agentpitstop.com/mobile/rates.php";
-    private static String PRELOADRATES_URL = "http://api.agentpitstop.com/mobile/rates.php?action=rates&age=76&zip=94561&sex=male&plan=F";
-
+    
 	// JSON Node names
 	private static final String TAG_ID = "id";
 	private static final String TAG_COMPANY = "company";
@@ -69,17 +60,18 @@ public class medicareSupplements extends ListActivity{
 		 @Override
 		public void onCreate(Bundle savedInstanceState) {
 		        super.onCreate(savedInstanceState);
-		    	Intent i = getIntent();
-		        Sex= i.getStringExtra("sex");
-		        if (Sex == null){ Sex = "male";};
-		        Age= i.getStringExtra("age");
+		        GlobalVariable userparm = ((GlobalVariable)getApplicationContext());
+	            Sex = userparm.getSex(); 
+		    	if (Sex == null){ Sex = "male";};
+		        Age = userparm.getAge();
 		        if (Age == null){ Age = "65";};
-		        Zip= i.getStringExtra("zip");
+		        Zip= userparm.getZip();
 		        if (Zip == null){ Zip = "94518";};
-		        Smoker= i.getStringExtra("smoker");
+		        Smoker= userparm.getSmoker();
 		        if (Smoker == null){ Smoker = "Non-Smoker";};
-		        
 
+		        setContentView(R.layout.medsupp_list);
+		        
 		        String parmaction = "?action=rates";
 	            String parmage = "&age=";
 	            parmage = parmage + Age;
@@ -91,7 +83,7 @@ public class medicareSupplements extends ListActivity{
 	            parmplan = parmplan + "F";
 	            String parmsmoker = "&smoker=";
 	            parmsmoker = parmsmoker + Smoker;
-	           //String parms = parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
+	          
 	            RATES_URL = RATES_URL + parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
 		        
 		        
@@ -101,8 +93,7 @@ public class medicareSupplements extends ListActivity{
 		        // Hashmap for ListView
 		        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
 		     // Hashmap for ListView
-		       ArrayList<HashMap<String, String>> medsupp_List = new ArrayList<HashMap<String, String>>();
-		     // Loading INBOX in Background Thread
+		      // Loading INBOX in Background Thread
 		        new Loadmedicaresupps().execute();
 		 }
 		 /**
@@ -134,7 +125,8 @@ public class medicareSupplements extends ListActivity{
 		            GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
 	                apploginurl.getState(); 
 		            // getting JSON string from URL
-		            JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
+		            @SuppressWarnings("unused")
+					JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
 		            
 		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(RATES_URL, params);
 		            String temp;

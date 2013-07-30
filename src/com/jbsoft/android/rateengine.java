@@ -6,23 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
-import android.view.View.OnClickListener;
 
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import com.jbsoft.library.UserFunctions;
+
 
 public class rateengine extends Activity{
-
+	
+	private static final String TAG_SELECT = "Selection";
 	private Spinner sex_spinner, smoker_spinner ;
 	private Button btnSubmit;
 	private String smokerString,sexString ,zipcodeString,ageString;
-	private static final String TAG_SEX = "sex";
-	private static final String TAG_AGE = "age";
-	private static final String TAG_SMOKER = "smoker";
-	private static final String TAG_ZIP = "zip";
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +36,7 @@ public class rateengine extends Activity{
 			    {
 			    	smokerString = parentView.getItemAtPosition(position).toString();
 			    }}
-			
-				 
             );
-            
 			sex_spinner.setOnItemSelectedListener(new CustomOnItemSelectedListener() 
 			{
 			    @Override
@@ -51,13 +44,7 @@ public class rateengine extends Activity{
 			    {
 			    	sexString = parentView.getItemAtPosition(position).toString();
 			    }}
-			
-				 
             );        
-            
-            
-            
-			
              // Login button Click Event
              btnSubmit.setOnClickListener(new View.OnClickListener() {
       
@@ -65,14 +52,17 @@ public class rateengine extends Activity{
 		     public void onClick(View v) {
 						zipcodeString = zipcode.getEditableText().toString();
 						ageString = age.getEditableText().toString();
-						UserFunctions userFunction = new UserFunctions();
-						  Intent i = new Intent( rateengine.this, medicareSupplements.class );
-						  i.putExtra(TAG_SEX, sexString);
-						  i.putExtra(TAG_AGE, ageString);
-						  i.putExtra(TAG_ZIP, zipcodeString);
-						  i.putExtra(TAG_SMOKER, smokerString);
+						GlobalVariable userparm = ((GlobalVariable)getApplicationContext());
+						  userparm.setSex(sexString);
+						  userparm.setAge(ageString);
+						  userparm.setZip(zipcodeString);
+						  userparm.setSmoker(smokerString);
+						  userparm.setNextTabActivity("1");
+						  
+						  Intent i = new Intent( rateengine.this, reportsActivity.class );
+						  i.putExtra(TAG_SELECT, "rateengine"); 
 						  startActivity( i );
-					}
+						  }
                     }); 
                 
     }

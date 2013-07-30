@@ -28,10 +28,7 @@
         </activity>
  
         <!--  Register Activity -->
-        <activity
-            android:label="Register New Account"
-            android:name=".RegisterActivity">
-        </activity>
+       
         
         <activity 
             android:name=".rateengine"/>
@@ -48,7 +45,9 @@
         <activity 
              android:name=".SingleMenuItemActivity" />         
         <activity
-            android:name=".MainActivity"  />   
+            android:name=".MainActivity"  />
+        <activity 
+            android:name=".reportsActivity" />   
         
     </application>
      

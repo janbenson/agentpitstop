@@ -1,9 +1,6 @@
 package com.jbsoft.android;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import org.apache.http.NameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
  
@@ -72,9 +69,7 @@ public class LoginActivity extends Activity {
                 // check for login response
                 try {
                       if (json.getString(KEY_SUCCESS) != null) {
-                    	
-                            String logged_in = null;  
-                                finish();
+                                 finish();
 
                         }else{
                             // Error in login
