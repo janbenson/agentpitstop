@@ -91,8 +91,8 @@ public final class R {
         public static final int loginUsername=0x7f090000;
         public static final int login_error=0x7f090002;
         public static final int payoption=0x7f090011;
-        public static final int plan=0x7f09000f;
-        public static final int rate=0x7f090010;
+        public static final int plan=0x7f090010;
+        public static final int rate=0x7f09000f;
         public static final int registerEmail=0x7f090026;
         public static final int registerName=0x7f090025;
         public static final int registerPassword=0x7f090027;

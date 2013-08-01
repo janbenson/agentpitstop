@@ -3,6 +3,8 @@ package com.jbsoft.android;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.jbsoft.library.UserFunctions;
  
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,9 +13,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
- 
-
-import com.jbsoft.library.UserFunctions;
  
 public class LoginActivity extends Activity {
     Button btnLogin;

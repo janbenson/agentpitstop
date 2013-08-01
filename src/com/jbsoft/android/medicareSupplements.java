@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.jbsoft.library.JSONParser;
+import com.jbsoft.library.UserFunctions;
  
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -24,6 +25,7 @@ public class medicareSupplements extends ListActivity{
  
     // Creating JSON Parser object
     JSONParser jsonParser = new JSONParser();
+    UserFunctions uf = new UserFunctions();
     ArrayList<HashMap<String, String>> medsupps_List = new ArrayList<HashMap<String, String>>(); 
     ArrayList<HashMap<String, String>> medsupp_List;
  
@@ -122,13 +124,19 @@ public class medicareSupplements extends ListActivity{
 		            // Building Parameters
 		            List<NameValuePair> params = new ArrayList<NameValuePair>();
 		            GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
-	                apploginurl.getState(); 
+	                apploginurl.getState();
+	                Age = apploginurl.getAge();
+	                Sex = apploginurl.getSex();
+	                Zip = apploginurl.getZip();
+	                //Plan = apploginurl.getPlan();
+	                Plan = "F";
+	                Smoker = apploginurl.getSmoker();
 		            // getting JSON string from URL
 		            @SuppressWarnings("unused")
 					JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
 		            
-		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(RATES_URL, params);
-		            String temp;
+		            JSONObject json2 =uf.getRates(Age, Zip, Sex, Plan, Smoker);
+		             String temp;
 		 
 		            // Check your log cat for JSON reponse
 		            Log.d("medicareSupplements JSON: ", json2.toString());

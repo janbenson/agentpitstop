@@ -54,7 +54,6 @@ public class UserFunctions {
         return json;
     }
     public JSONObject getRates(String ageString, String zipString,String sexString,String planString, String smokerString){
-    	String cleanURL = ""; 
     	String parmaction = "?action=rates";
         String parmage = "&age=";
         parmage = parmage + ageString;
@@ -67,12 +66,11 @@ public class UserFunctions {
         String parmsmoker = "&smoker=";
         parmsmoker = parmsmoker + smokerString;
         String parms = parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
-        cleanURL = rateengineURL + parms;
-        //rateengineURL = rateengineURL + parms;
+        rateengineURL = rateengineURL + parms;
     	
         // Building Parameters
-        List<NameValuePair> rateparams = new ArrayList<NameValuePair>();
-        JSONObject json = jsonParser.getJSONFromUrl(cleanURL, rateparams);
+       // List<NameValuePair> rateparams = new ArrayList<NameValuePair>();
+        JSONObject json = jsonParser.getJSONFromUrl(rateengineURL, rateparams);
         
         return json;
     }  

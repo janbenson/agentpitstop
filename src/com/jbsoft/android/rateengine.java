@@ -23,10 +23,10 @@ public class rateengine extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 			setContentView(R.layout.rateengine);
-			final EditText age = (EditText) findViewById(R.id.editText2);		
+			final EditText age = (EditText) findViewById(R.id.editText1);		
 			smoker_spinner = (Spinner) findViewById(R.id.spinner2);
 			sex_spinner = (Spinner) findViewById(R.id.spinner3);
-			final EditText zipcode = (EditText) findViewById(R.id.editText1);
+			final EditText zipcode = (EditText) findViewById(R.id.editText2);
 			btnSubmit = (Button) findViewById(R.id.btnSubmit);
 			
 			smoker_spinner.setOnItemSelectedListener(new CustomOnItemSelectedListener() 
