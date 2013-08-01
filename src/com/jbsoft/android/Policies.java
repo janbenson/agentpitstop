@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import com.jbsoft.library.JSONParser;
+import com.jbsoft.library.UserFunctions;
 
 public class Policies  extends ListActivity{
 	// Progress Dialog
@@ -31,6 +32,7 @@ public class Policies  extends ListActivity{
  
     // Creating JSON Parser object
     JSONParser jsonParser = new JSONParser();
+    UserFunctions uf = new UserFunctions();
 
  
    
@@ -41,7 +43,7 @@ public class Policies  extends ListActivity{
     ArrayList<String> policy_list = new ArrayList<String>();
     // url to make request
      
-    private static String policiespreloadURL = "http://api.agentpitstop.com/mobile/policies.php?action=status&start=2010-01-01&end=2013-12-31";
+    private static String policiesURL = "http://api.agentpitstop.com/mobile/policies.php?action=status&start=2010-01-01&end=2013-12-31";
 	// JSON Node names
 	private static final String TAG_POLICIES = "policies";
 	private static final String TAG_FIRST = "firstname";
@@ -68,15 +70,32 @@ public class Policies  extends ListActivity{
 	 @Override
 		public void onCreate(Bundle savedInstanceState) {
 		        super.onCreate(savedInstanceState);
-		        requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		        setContentView(R.layout.policies_list);
-		        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
-		        // Hashmap for ListView
-		        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
-		   
-		     // Loading INBOX in Background Thread
-		        new LoadPolicies().execute();
+		        
 		 }
+	 
+	 
+	 public void onResume(Bundle savedInstanceState){
+		 super.onResume();
+		 requestWindowFeature(Window.FEATURE_LEFT_ICON);
+	        setContentView(R.layout.policies_list);
+	        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
+		    new LoadPolicies().execute();
+	 }
+	 @Override
+	    protected void onStart() {
+	        super.onStart();
+	        requestWindowFeature(Window.FEATURE_LEFT_ICON);
+	        setContentView(R.layout.policies_list);
+	        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
+	        // Hashmap for ListView
+	        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
+	   
+	     // Loading INBOX in Background Thread
+	        new LoadPolicies().execute();
+	    }
+	 
+	 
+	 
 		 /**
 		     * Background Async Task to Load medicare supplement rates selected on rate engine and then ies
 		     *  by making HTTP Request
@@ -109,11 +128,13 @@ public class Policies  extends ListActivity{
 		            
 	                GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
 	                apploginurl.getState();
-	                
+	                String startdate = apploginurl.getStartDate();
+	                String enddate = apploginurl.getEndDate();
 	                
 		            @SuppressWarnings("unused")
 					JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
-		            JSONObject json2 =jsonParser.getafterloggedinJSONFromUrl(policiespreloadURL, params);
+		            JSONObject json2 = uf.getSubmissions(startdate, enddate);
+		           
 		 
 		            // Check your log cat for JSON response  // Hashmap for ListView
 				
@@ -206,7 +227,6 @@ public class Policies  extends ListActivity{
 					         
 			                // Launching new screen on Selecting Single ListItem
 			                lv.setOnItemClickListener(new OnItemClickListener() {
-			         
 			                    @Override
 			                    public void onItemClick(AdapterView<?> parent, View view,
 			                            int position, long id) {

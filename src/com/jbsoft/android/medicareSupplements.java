@@ -31,7 +31,7 @@ public class medicareSupplements extends ListActivity{
     JSONArray medsupps = null;	 
     // url to make request
     
-   
+    
     private static String RATES_URL = "http://api.agentpitstop.com/mobile/rates.php";
     
 	// JSON Node names
@@ -69,8 +69,7 @@ public class medicareSupplements extends ListActivity{
 		        if (Zip == null){ Zip = "94518";};
 		        Smoker= userparm.getSmoker();
 		        if (Smoker == null){ Smoker = "Non-Smoker";};
-
-		        setContentView(R.layout.medsupp_list);
+		        
 		        
 		        String parmaction = "?action=rates";
 	            String parmage = "&age=";

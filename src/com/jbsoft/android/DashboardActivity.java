@@ -60,6 +60,7 @@ public class DashboardActivity extends Activity {
                                  startActivity(policies);
                                  // Close Login Screen
                                  DashboardActivity.isQuit = true;
+                                 finish();
                  }}
             ); 
              btnrateengine.setOnClickListener(new View.OnClickListener() {

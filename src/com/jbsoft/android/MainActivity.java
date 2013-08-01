@@ -23,8 +23,15 @@ public class MainActivity extends TabActivity {
         Selects= i.getStringExtra("Selection");
         Resources resources = getResources(); 
 		TabHost tabHost = getTabHost(); 
-		tabHost.getTabWidget().setStripEnabled(false);
+		
         if (Selects.contentEquals("submissions")) {
+        	// Filter
+    		Intent intentSubmit = new Intent().setClass(this, submissionfilter.class);
+    		TabSpec tabSpecSubmit = tabHost
+    			.newTabSpec("Select Date Range")
+    			.setIndicator("", resources.getDrawable(R.drawable.icon_submitfilter_config))
+    			.setContent(intentSubmit);
+    		
         	// Policy Submission
     		Intent intentPolicies = new Intent().setClass(this, Policies.class);
     		TabSpec tabSpecPolicies = tabHost
@@ -32,12 +39,7 @@ public class MainActivity extends TabActivity {
     			.setIndicator("", resources.getDrawable(R.drawable.icon_policysubmit_config))
     			.setContent(intentPolicies);
 
-    		// Filter
-    		Intent intentSubmit = new Intent().setClass(this, submissionfilter.class);
-    		TabSpec tabSpecSubmit = tabHost
-    			.newTabSpec("Select Date Range")
-    			.setIndicator("", resources.getDrawable(R.drawable.icon_submitfilter_config))
-    			.setContent(intentSubmit);
+    		
     		
     		// RateEngine tab
 			Intent intentRate = new Intent().setClass(this, rateengine.class);
@@ -59,9 +61,9 @@ public class MainActivity extends TabActivity {
 
 			
     		// add all tabs 
-    		tabHost.addTab(tabSpecPolicies);
+			tabHost.addTab(tabSpecSubmit);
+			tabHost.addTab(tabSpecPolicies);
     		tabHost.addTab(tabSpecRateengine);
-    		tabHost.addTab(tabSpecSubmit);
     		tabHost.addTab(tabSpecExit);
     		tabHost.setCurrentTab(0);
     		
@@ -89,7 +91,7 @@ public class MainActivity extends TabActivity {
 				.setContent(intentAdv);
 			
 			// Perscription Drug Plan tab
-			Intent intentPerscrip = new Intent();
+			Intent intentPerscrip = new Intent().setClass(this, perscriptionDrugplan.class);
 			TabSpec tabSpecPdp = tabHost
 				.newTabSpec("Perscription Drug Plan")
 				.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
@@ -101,10 +103,10 @@ public class MainActivity extends TabActivity {
 		tabHost.addTab(tabSpecSupps);
 		tabHost.addTab(tabSpecAdv);
 		tabHost.addTab(tabSpecPdp);
-		
+		tabHost.setCurrentTab(0);
         }		
 		//set Windows tab as default (zero based)
-        tabHost.setCurrentTab(0);
+        
 	}
 	
 	 @Override

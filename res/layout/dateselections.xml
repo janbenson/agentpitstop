@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ 
+    <Button
+        android:id="@+id/btnChangeStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Start Date" />
+ 
+    <TextView
+        android:id="@+id/lblDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Start Date (M-D-YYYY): "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+ 
+    <TextView
+        android:id="@+id/tvStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+ 
+    <DatePicker
+        android:id="@+id/dpStartResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+     <Button
+        android:id="@+id/btnChangeEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change End Date" />
+ 
+    <TextView
+        android:id="@+id/lblDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current End Date (M-D-YYYY): "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+ 
+    <TextView
+        android:id="@+id/tvEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+ 
+    <DatePicker
+        android:id="@+id/dpEndResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+ 
+</LinearLayout>

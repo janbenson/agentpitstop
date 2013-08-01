@@ -7,21 +7,21 @@
  
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/Age"
         android:prompt="@string/age_prompt" />
  
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:layout_below="@+id/spinner1"
         android:entries="@array/Tobacco"
         android:prompt="@string/tobacco_prompt" />
      <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:layout_below="@+id/spinner2"
         android:entries="@array/Sex"
@@ -29,7 +29,7 @@
 
      <EditText
          android:id="@+id/editText1"
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_below="@+id/spinner3"
          android:ems="10"
@@ -39,7 +39,7 @@
      </EditText>
 
      <Button
-         android:onClick="buttonClicked"
+
          android:id="@+id/btnSubmit"
          style="@style/AppTheme"
          android:layout_width="wrap_content"

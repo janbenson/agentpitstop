@@ -27,7 +27,7 @@ public class reportsActivity extends TabActivity {
 
         Resources resources = getResources(); 
     		TabHost tabHost = getTabHost(); 
-    		tabHost.getTabWidget().setStripEnabled(false);
+    		
     		GlobalVariable nextGlobalVariable = ((GlobalVariable)getApplicationContext());
     		try {
     		     selectedtab = Integer.parseInt(nextGlobalVariable.getNextTabActivity());
@@ -99,7 +99,7 @@ public class reportsActivity extends TabActivity {
 				.setContent(intentAdv);
 			
 			// Perscription Drug Plan tab
-			Intent intentPerscrip = new Intent();
+			Intent intentPerscrip = new Intent().setClass(this, perscriptionDrugplan.class);
 			TabSpec tabSpecPdp = tabHost
 				.newTabSpec("Perscription Drug Plan")
 				.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
@@ -111,10 +111,10 @@ public class reportsActivity extends TabActivity {
 		tabHost.addTab(tabSpecSupps);
 		tabHost.addTab(tabSpecAdv);
 		tabHost.addTab(tabSpecPdp);
-		
+		tabHost.setCurrentTab(selectedtab);
         }		
 		//set Windows tab as default (zero based)
-        tabHost.setCurrentTab(selectedtab);
+        tabHost.setCurrentTab(selectedtab);        
 	}
 	
 	 @Override

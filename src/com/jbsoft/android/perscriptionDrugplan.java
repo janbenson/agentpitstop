@@ -11,7 +11,7 @@ public class perscriptionDrugplan extends Activity {
 	        super.onCreate(savedInstanceState);
 
 	        TextView textview = new TextView(this);
-	        textview.setText("This is Prescription tab");
+	        textview.setText("This is where the Prescription Drug Plan info will display");
 	        setContentView(textview);
 	    }
  

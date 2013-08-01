@@ -18,7 +18,7 @@ public class UserFunctions {
 
     private static String loginURL = "http://api.agentpitstop.com/mobile/authenticate.php";
     private static String rateengineURL = "http://api.agentpitstop.com/mobile/rates.php"; 
-    private static String policiespreloadURL = "http://api.agentpitstop.com/mobile/policies.php?action=status&start=2010-01-01&end=2013-12-31";
+    private static String policiesURL = "http://api.agentpitstop.com/mobile/policies.php";
     private static String rate_tag = "rates";
 
     // contacts JSONArray
@@ -75,13 +75,21 @@ public class UserFunctions {
         return json;
     }  
     public JSONObject getSubmissions(String startString, String endString){
-        // Building Parameters
+        String parmaction = "?action=status";
+        String parmstart = "&start=";
+        if (startString==null){startString = "2010-01-01";}
+        if (endString==null){endString = "2013-12-31";}
+        parmstart = parmstart + startString;
+        String parmend = "&end=";
+        parmend = parmend + endString;
+        
+        String parms = parmaction + parmstart + parmend ;
+        policiesURL = policiesURL + parms;
+    	
+    	
         List<NameValuePair> submissionparams = new ArrayList<NameValuePair>();
-        submissionparams.add(new BasicNameValuePair("action", rate_tag));
-        submissionparams.add(new BasicNameValuePair("start", startString));
-        submissionparams.add(new BasicNameValuePair("end", endString));
-        submissionparams.add(new BasicNameValuePair("plan", "F"));
-        JSONObject json = jsonParser.getJSONFromUrl(policiespreloadURL, submissionparams);
+       
+        JSONObject json = jsonParser.getJSONFromUrl(policiesURL, submissionparams);
 
         return json;
     }  

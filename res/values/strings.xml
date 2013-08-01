@@ -136,11 +136,14 @@
     <string name="sex_prompt">Sex</string>
     <string name="rateengineprompt">Enter the members information to see results. Only the top 25 results will be displayed so it is important to enter the members information as complete as possible.</string>
     <string name="btn_submit">Get Rates</string>
+    <string name="btn_submissions">Get Policies</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Policies">Submitted Policies</string>
     <string name="RateEngine">Rate Engine</string>
     
     <string name="Register">No account. Register Me!&quot;</string>
+    
+    <string name="zipcode">zip</string>
 
  </resources>

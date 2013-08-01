@@ -4,46 +4,110 @@
     android:layout_height="match_parent"
     android:background="@color/aps_green"
     android:orientation="vertical"
-    android:padding="8dip" >
+    android:padding="8dip"
+    android:tag="@string/tobacco_prompt" >
 
-	<TextView android:layout_width="match_parent"
-		android:layout_height="wrap_content" android:text="@string/rateengineprompt"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tag="@string/sex_prompt"
+        android:text="@string/sex_prompt"
+        android:textColor="@color/dark_blue" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/btn_submit" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/btnSubmit"
+            android:tag="@string/tobacco_prompt"
+            android:text="@string/tobacco_prompt"
+            android:textColor="@color/dark_blue" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:background="@color/light_green"
+            android:entries="@array/Sex"
+            android:prompt="@string/sex_prompt" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/spinner3"
+            android:layout_marginTop="48dp"
+            android:ems="10"
+            android:inputType="textPostalAddress" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editText1"
+            android:layout_alignBottom="@+id/editText1"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/editText1"
+            android:ems="10"
+            android:inputType="text|none"
+            android:prompt="@string/age_prompt" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText1"
+            android:layout_alignLeft="@+id/editText2"
+            android:entries="@array/Tobacco"
+            android:prompt="@string/tobacco_prompt"
+            android:tag="@string/tobacco_prompt" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/spinner3"
+            android:layout_marginTop="16dp"
+            android:text="@string/age_prompt"
+            android:textColor="@color/dark_blue" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_alignBottom="@+id/textView2"
+            android:layout_alignRight="@+id/TextView01"
+            android:text="@string/zipcode"
+            android:textColor="@color/dark_blue" />
+
+    </RelativeLayout>
+
+	<TextView 
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		 android:text="@string/rateengineprompt"
 		android:gravity="center_horizontal" android:textSize="@dimen/font_small"	
 		android:textColor="@color/black" android:paddingBottom="16dip" />
-
-	<RelativeLayout android:orientation="vertical"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal">
-
-		<EditText
-		    android:id="@+id/editText2"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:inputType="text|none"
-		    android:prompt="@string/age_prompt" />
-
-		<Spinner android:id="@+id/spinner2" android:layout_width="match_parent"
-			android:layout_height="wrap_content" android:layout_below="@+id/editText2"
-			android:entries="@array/Tobacco" android:prompt="@string/tobacco_prompt" />
-		<Spinner android:id="@+id/spinner3" android:layout_width="match_parent"
-			android:layout_height="wrap_content" android:layout_below="@+id/spinner2"
-			android:entries="@array/Sex" android:prompt="@string/sex_prompt" />
-
-		<EditText
-		    android:id="@+id/editText1"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@+id/spinner3"
-		    android:inputType="textPostalAddress" />
-
-		<Button
-		    android:id="@+id/btnSubmit"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_below="@+id/editText1"
-		    android:text="@string/btn_submit" />
-
-	</RelativeLayout>
 
 
 </LinearLayout>

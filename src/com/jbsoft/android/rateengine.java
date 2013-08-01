@@ -34,7 +34,7 @@ public class rateengine extends Activity{
 			    @Override
 			    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) 
 			    {
-			    	smokerString = parentView.getItemAtPosition(position).toString();
+			    	smokerString = (parentView.getItemAtPosition(position).toString()).trim();
 			    }}
             );
 			sex_spinner.setOnItemSelectedListener(new CustomOnItemSelectedListener() 
@@ -42,7 +42,7 @@ public class rateengine extends Activity{
 			    @Override
 			    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) 
 			    {
-			    	sexString = parentView.getItemAtPosition(position).toString();
+			    	sexString = (parentView.getItemAtPosition(position).toString()).trim();
 			    }}
             );        
              // Login button Click Event
@@ -50,8 +50,8 @@ public class rateengine extends Activity{
       
                  @Override
 		     public void onClick(View v) {
-						zipcodeString = zipcode.getEditableText().toString();
-						ageString = age.getEditableText().toString();
+						zipcodeString = (zipcode.getEditableText().toString()).trim();
+						ageString = (age.getEditableText().toString()).trim();
 						GlobalVariable userparm = ((GlobalVariable)getApplicationContext());
 						  userparm.setSex(sexString);
 						  userparm.setAge(ageString);

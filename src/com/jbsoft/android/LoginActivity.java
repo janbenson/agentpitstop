@@ -46,7 +46,8 @@ public class LoginActivity extends Activity {
  
             @Override
 			public void onClick(View view) {
-                String username = inputUsername.getText().toString();
+            	
+                String username = (inputUsername.getText().toString()).trim();
                 String password = inputPassword.getText().toString();
              	String temp = username;
         		temp = temp.replaceAll(" ", "%20");
