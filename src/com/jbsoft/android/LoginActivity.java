@@ -1,6 +1,12 @@
 package com.jbsoft.android;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -8,6 +14,7 @@ import com.jbsoft.library.UserFunctions;
  
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -60,16 +67,20 @@ public class LoginActivity extends Activity {
                 loginURL = loginURL + parms;
                 GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
                 apploginurl.setState(loginURL);
+               
                 
                 
                 
                 UserFunctions userFunction = new UserFunctions();
+               
+                
                 JSONObject json = userFunction.loginUser(username, password);
  
                 // check for login response
                 try {
                       if (json.getString(KEY_SUCCESS) != null) {
-                                 finish();
+                    	  userFunction.writeToFile(loginURL);
+                          finish();
 
                         }else{
                             // Error in login

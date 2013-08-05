@@ -30,10 +30,19 @@ public class DashboardActivity extends Activity {
          * */       
         // Check login status in database
             userFunctions = new UserFunctions();
-    
+            
+            String logged_in = userFunctions.isUserLoggedIn( );
+            
+            if (logged_in == "FALSE") {
             // user is not logged in show login screen
-            Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
-            startActivity(login);
+              Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
+              startActivity(login);
+            }
+            else
+            {
+            	 GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
+                 apploginurl.setState(logged_in);
+            }
         	// user already logged in show databoard
              requestWindowFeature(Window.FEATURE_LEFT_ICON);
         	 setContentView(R.layout.dashboard); 
