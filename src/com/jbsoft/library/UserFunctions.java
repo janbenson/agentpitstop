@@ -24,6 +24,8 @@ import com.jbsoft.android.GlobalVariable;
 
  
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
@@ -88,7 +90,7 @@ public class UserFunctions {
         parmsex = parmsex + sexString;
         String parmplan = "&plan=";
         parmplan = parmplan + planString;
-        String parmsmoker = "&smoker=";
+        String parmsmoker = "&tobacco=";
         parmsmoker = parmsmoker + smokerString;
         String parms = parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;
         cleanURL = rateengineURL + parms;
@@ -258,6 +260,6 @@ public class UserFunctions {
 
 	    return ret;
 	}
-    
+	
     
 }

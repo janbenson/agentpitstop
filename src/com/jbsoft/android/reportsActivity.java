@@ -34,88 +34,71 @@ public class reportsActivity extends TabActivity {
 		    	     } catch(NumberFormatException nfe) {
 		    	        System.out.println("Could not parse " + nfe);
 		    	     } 
-        if (Selects.contentEquals("submissions")) {
-        	// Policy Submission
-    		Intent intentPolicies = new Intent().setClass(this, Policies.class);
-    		TabSpec tabSpecPolicies = tabHost
-    			.newTabSpec("Policy Submissions")
-    			.setIndicator("", resources.getDrawable(R.drawable.icon_policysubmit_config))
-    			.setContent(intentPolicies);
 
-    		// Filter
-    		Intent intentSubmit = new Intent().setClass(this, submissionfilter.class);
-    		TabSpec tabSpecSubmit = tabHost
-    			.newTabSpec("Select Date Range")
-    			.setIndicator("", resources.getDrawable(R.drawable.icon_submitfilter_config))
-    			.setContent(intentSubmit);
-    		
-    		// RateEngine tab
-			Intent intentRate = new Intent().setClass(this, rateengine.class);
-			TabSpec tabSpecRateengine = tabHost
-				.newTabSpec("Change Rate")
-				.setIndicator("", resources.getDrawable(R.drawable.icon_rateengine_config))
-				.setContent(intentRate);
-    		
-    		// Exit tab
-			Intent intent = new Intent().setClass(this, DashboardActivity.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			DashboardActivity.isQuit = true;
+		Intent intentRate = new Intent().setClass(this, rateengine.class);
+		TabSpec tabSpecRateengine = tabHost
+			.newTabSpec("Change Rate")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_rateengine_config))
+			.setContent(intentRate);	 
+			
+		// Medicare Supplements
+		Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
+		TabSpec tabSpecSupps = tabHost
+			.newTabSpec("Medicare Supplements")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
+			.setContent(intentSupps);
+
+		// Medicare Advantage tab
+		Intent intentAdv = new Intent().setClass(this, medicareAdvantage.class);
+		TabSpec tabSpecAdv = tabHost
+			.newTabSpec("Medicare Advantage")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_medadv_config))
+			.setContent(intentAdv);
 		
-			
-			TabSpec tabSpecExit = tabHost
-    		.newTabSpec("Exit")
-    		.setIndicator("", resources.getDrawable(R.drawable.icon_exit_config))
-    		.setContent(intent);
+		// Perscription Drug Plan tab
+		Intent intentPerscrip = new Intent().setClass(this, perscriptionDrugplan.class);
+		TabSpec tabSpecPdp = tabHost
+			.newTabSpec("Perscription Drug Plan")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
+			.setContent(intentPerscrip);
+            
+		Intent intentSubmit = new Intent().setClass(this, submissionfilter.class);
+		TabSpec tabSpecSubmit = tabHost
+			.newTabSpec("Select Date Range")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_submitfilter_config))
+			.setContent(intentSubmit);
+		
+    	// Policy Submission
+		Intent intentPolicies = new Intent().setClass(this, Policies.class);
+		TabSpec tabSpecPolicies = tabHost
+			.newTabSpec("Policy Submissions")
+			.setIndicator("", resources.getDrawable(R.drawable.icon_policysubmit_config))
+			.setContent(intentPolicies);
 
-			
-    		// add all tabs 
-    		tabHost.addTab(tabSpecPolicies);
-    		tabHost.addTab(tabSpecRateengine);
-    		tabHost.addTab(tabSpecSubmit);
-    		tabHost.addTab(tabSpecExit);
-    		tabHost.setCurrentTab(selectedtab);
-    		
-            }		
-          else{
-        	// RateEngine tab
-				Intent intentRate = new Intent().setClass(this, rateengine.class);
-				TabSpec tabSpecRateengine = tabHost
-					.newTabSpec("Change Rate")
-					.setIndicator("", resources.getDrawable(R.drawable.icon_rateengine_config))
-					.setContent(intentRate);	 
-				
-			// Medicare Supplements
-			Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
-			TabSpec tabSpecSupps = tabHost
-				.newTabSpec("Medicare Supplements")
-				.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
-				.setContent(intentSupps);
+		
+		// Exit tab
+		Intent intent = new Intent().setClass(this, DashboardActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		DashboardActivity.isQuit = true;
 	
-			// Medicare Advantage tab
-			Intent intentAdv = new Intent().setClass(this, medicareAdvantage.class);
-			TabSpec tabSpecAdv = tabHost
-				.newTabSpec("Medicare Advantage")
-				.setIndicator("", resources.getDrawable(R.drawable.icon_medadv_config))
-				.setContent(intentAdv);
-			
-			// Perscription Drug Plan tab
-			Intent intentPerscrip = new Intent().setClass(this, perscriptionDrugplan.class);
-			TabSpec tabSpecPdp = tabHost
-				.newTabSpec("Perscription Drug Plan")
-				.setIndicator("", resources.getDrawable(R.drawable.icon_perscriptiondrugplan_config))
-				.setContent(intentPerscrip);
 		
-		
+		TabSpec tabSpecExit = tabHost
+		.newTabSpec("Exit")
+		.setIndicator("", resources.getDrawable(R.drawable.icon_exit_config))
+		.setContent(intent);
+
+        
 		// add all tabs 
 		tabHost.addTab(tabSpecRateengine);	
 		tabHost.addTab(tabSpecSupps);
 		tabHost.addTab(tabSpecAdv);
 		tabHost.addTab(tabSpecPdp);
-		tabHost.setCurrentTab(selectedtab);
-        }		
+		tabHost.addTab(tabSpecSubmit);
+		tabHost.addTab(tabSpecPolicies);
+		tabHost.addTab(tabSpecExit);
+	    tabHost.setCurrentTab(selectedtab);
+    }		
 		//set Windows tab as default (zero based)
-        tabHost.setCurrentTab(selectedtab);        
-	}
 	
 	 @Override
 	    protected void onStart() {

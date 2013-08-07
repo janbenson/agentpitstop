@@ -66,9 +66,15 @@ public class medicareSupplements extends ListActivity{
 	            Sex = userparm.getSex(); 
 		    	if (Sex == null){ Sex = "male";};
 		        Age = userparm.getAge();
-		        if (Age == null){ Age = "65";};
+		        if (Age.length() == 0){ 
+		        	Age = "65";
+		            userparm.setAge(Age);
+		        };
 		        Zip= userparm.getZip();
-		        if (Zip == null){ Zip = "94518";};
+		        if (Zip.length() == 0){ 
+		        	Zip = "94518";
+		        	userparm.setZip(Zip);
+		        	};
 		        Smoker= userparm.getSmoker();
 		        if (Smoker == null){ Smoker = "Non-Smoker";};
 		        
@@ -82,7 +88,7 @@ public class medicareSupplements extends ListActivity{
 	            parmsex = parmsex + Sex;
 	            String parmplan = "&plan=";
 	            parmplan = parmplan + "F";
-	            String parmsmoker = "&smoker=";
+	            String parmsmoker = "&tobacco=";
 	            parmsmoker = parmsmoker + Smoker;
 	          
 	            RATES_URL = RATES_URL + parmaction + parmage + parmzip + parmsex + parmplan + parmsmoker;

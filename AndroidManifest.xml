@@ -3,7 +3,14 @@
     package="com.jbsoft.android"
     android:versionCode="1"
     android:versionName="1.0" >
-
+   <!-- Allow to write to external drive attached to phone -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" /> 
+    <!-- Allow to connect with internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Allow user to make a phone call  -->
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    
     <uses-sdk android:minSdkVersion="7"/>
     <application
         android:name=".GlobalVariable"
@@ -48,12 +55,9 @@
         <activity 
             android:name=".reportsActivity" />   
          <activity 
-            android:name=".submissionfilter" />   
+            android:name=".submissionfilter" />
+         <activity android:name=".contactInfo"></activity>   
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
-        <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" /> 
-    <!-- Allow to connect with internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    
  
 </manifest>

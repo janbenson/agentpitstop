@@ -3,12 +3,12 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES">
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="agentpitstop"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="/home/jan/Mobile/adt-bundle-linux-x86-20130522/sdk/platforms/android-10/android.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://developer.android.com/reference/"/>
@@ -18,5 +18,13 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="lib" path="/home/jan/Mobile/adt-bundle-linux-x86-20130522/sdk/platforms/android-3/android.jar"/>
+	<classpathentry kind="lib" path="/home/jan/Mobile/adt-bundle-linux-x86-20130522/sdk/platforms/android-7/android.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://developer.android.com/reference/"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

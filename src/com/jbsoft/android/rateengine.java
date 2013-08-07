@@ -59,9 +59,10 @@ public class rateengine extends Activity{
 						  userparm.setSmoker(smokerString);
 						  userparm.setNextTabActivity("1");
 						  
-						  Intent i = new Intent( rateengine.this, reportsActivity.class );
+						  Intent i = new Intent( rateengine.this, DashboardActivity.class );
 						  i.putExtra(TAG_SELECT, "rateengine"); 
 						  startActivity( i );
+						  finish();
 						  }
                     }); 
                 
