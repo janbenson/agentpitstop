@@ -66,7 +66,7 @@ public class JSONParser {
 	        } catch (ClientProtocolException e) {
 	            e.printStackTrace();
 	        } catch (IOException e) {
-	            e.printStackTrace();;
+	            e.printStackTrace();
 	        }
 	 
 	        try {
@@ -109,10 +109,9 @@ public class JSONParser {
 	        try {  	
 	         
 	           HttpGet httpGet = new HttpGet(url);
-	           
 	          // httpPost.setEntity(new UrlEncodedFormEntity(params));
-	           //HttpResponse httpResponse = httpClient.execute(httpPost);
 	           HttpResponse httpResponse = client.execute(httpGet);
+	          // HttpResponse httpResponse = client.execute(httpGet);
 	          // HttpResponse httpResponse =client.execute(httpPost);
 	          
 	           HttpEntity httpEntity = httpResponse.getEntity();

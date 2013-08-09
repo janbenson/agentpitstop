@@ -73,9 +73,23 @@
     <string name="Password">Password</string>
     <string name="Policies">Submitted Policies</string>
     <string name="RateEngine">Rate Engine</string>
-    
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+  
+     
+     <string name="First">First</string>
+    <string name="Last">Last</string>
+    <string name="Company">Company</string>
+    <string name="Plan">Plan</string>
+    <string name="Submitted">Submitted</string>
+    <string name="Effective">Effective</string>
+     <string name="Status">Status</string>
+     
+     
     <string name="Register">No account. Register Me!&quot;</string>
     
     <string name="zipcode">zip</string>
+    
+    <string name="submitted">Submitted</string>
 
  </resources>

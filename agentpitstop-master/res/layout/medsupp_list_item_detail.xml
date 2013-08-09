@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+ 
+      <!-- Company -->
+    <TextView
+        android:id="@+id/company"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:paddingLeft="8sp"
+        android:paddingBottom="4sp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/plan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:paddingLeft="8sp"
+        android:paddingBottom="4sp"
+        android:textSize="20sp"
+        android:textStyle="bold" 
+       android:layout_below="@id/company"/>    
+    <!-- Rate  -->
+    <TextView android:id="@+id/rate"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingLeft="8sp"
+        android:paddingBottom="6sp"
+        android:textSize="15sp"
+        android:layout_below="@id/plan"/>
+     
+    <!-- Payoption-->
+    <TextView android:id="@+id/payoption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rate"
+        android:padding="8sp"/>
+
+    <TextView
+        android:id="@+id/plan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:paddingLeft="8sp"
+        android:paddingBottom="4sp"
+        android:textSize="15sp"
+        android:layout_below="@id/company"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8sp"
+        android:paddingLeft="8sp"
+        android:paddingBottom="4sp"
+        android:textSize="15sp"
+        android:textStyle="bold" 
+         android:layout_below="@id/plan"/>    
+    <!-- Company  -->
+    <TextView android:id="@+id/submitted"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingLeft="8sp"
+        android:paddingBottom="6sp"
+        android:textSize="15sp"
+        android:layout_below="@id/status"/>
+    <TextView android:id="@+id/effective"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingLeft="8sp"
+        android:paddingBottom="6sp"
+        android:textSize="15sp"
+        android:layout_below="@id/submitted"/>
+</RelativeLayout>

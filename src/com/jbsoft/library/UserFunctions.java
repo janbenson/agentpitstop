@@ -103,6 +103,7 @@ public class UserFunctions {
         return json;
     }  
     public JSONObject getSubmissions(String startString, String endString){
+    	String cleanURL = "";
         String parmaction = "?action=status";
         String parmstart = "&start=";
         if (startString==null){startString = "2010-01-01";}
@@ -112,12 +113,12 @@ public class UserFunctions {
         parmend = parmend + endString;
         
         String parms = parmaction + parmstart + parmend ;
-        policiesURL = policiesURL + parms;
-    	
+       // policiesURL = policiesURL + parms;
+        cleanURL = policiesURL + parms;
     	
         List<NameValuePair> submissionparams = new ArrayList<NameValuePair>();
        
-        JSONObject json = jsonParser.getJSONFromUrl(policiesURL, submissionparams);
+        JSONObject json = jsonParser.getafterloggedinJSONFromUrl(cleanURL, submissionparams);
 
         return json;
     }  

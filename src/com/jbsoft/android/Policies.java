@@ -58,6 +58,8 @@ public class Policies  extends ListActivity{
 	private static final String TAG_SUBMITTED= "submitted";
 	private static final String TAG_EFFECTIVE= "effective";
 	private static final String TAG_ADDED= "added";
+	private static final String TAG_EMAIL= "email";
+	private static final String TAG_PHONE= "phone";
 //	private static final String TAG_CHANGED= "changed";
 	private static final String TAG_TERMINATION= "termination";
 	private static final String TAG_GUID= "guid";
@@ -89,7 +91,7 @@ public class Policies  extends ListActivity{
 	        setContentView(R.layout.policies_list);
 	        setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.vb1);
 	        // Hashmap for ListView
-	        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
+	       policies_List = new ArrayList<HashMap<String, String>>();	  
 	   
 	     // Loading INBOX in Background Thread
 	        new LoadPolicies().execute();
@@ -166,6 +168,8 @@ public class Policies  extends ListActivity{
 		                    String policytype = c.getString(TAG_POLICYTYPE);
 		                    String policyproducer = c.getString(TAG_POLICYPRODUCER);
 		                    String primaryagent = c.getString( TAG_PRIMARYAGENT);
+		                    String phone = c.getString(TAG_PHONE);
+		                    String email = c.getString( TAG_EMAIL);
 		                    // creating new HashMap
 		                    HashMap<String, String> map = new HashMap<String, String>();
 		 
@@ -188,7 +192,8 @@ public class Policies  extends ListActivity{
 		                    map.put(TAG_POLICYTYPE, policytype);
 		                    map.put(TAG_PRIMARYAGENT, primaryagent);
 		                    map.put(TAG_POLICYPRODUCER, policyproducer);
-		  
+		                    map.put(TAG_PHONE, phone);
+		                    map.put(TAG_EMAIL, email);		  
 		                    // adding HashList to ArrayList
 		                    policies_List.add(map);
 		                    
@@ -217,8 +222,7 @@ public class Policies  extends ListActivity{
 		                     * */
 		                    ListAdapter adapter = new SimpleAdapter(
 		                            Policies.this, policies_List,
-		                            R.layout.policies_list_item, new String[] { TAG_FIRST, TAG_LAST, 
-		                            		TAG_COMPANY},
+		                            R.layout.policies_list_item, new String[] { TAG_FIRST, TAG_LAST,TAG_COMPANY},
 		                            new int[] {R.id.first,R.id.last, R.id.company});
 		                    // updating listview
 		                    setListAdapter(adapter);
@@ -246,6 +250,9 @@ public class Policies  extends ListActivity{
 			                        in.putExtra(TAG_SUBMITTED, policies_List.get(position).get(TAG_SUBMITTED));
 			                        in.putExtra(TAG_STATUS, policies_List.get(position).get(TAG_STATUS));
 			                        in.putExtra(TAG_EFFECTIVE, policies_List.get(position).get(TAG_EFFECTIVE));
+			                        in.putExtra(TAG_PHONE, policies_List.get(position).get(TAG_PHONE));
+			                        in.putExtra(TAG_EMAIL, policies_List.get(position).get(TAG_EMAIL));
+			                        
 			                        startActivity(in);
 			                    }
 			                });

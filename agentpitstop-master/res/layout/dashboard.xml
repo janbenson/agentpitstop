@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/aps_green"
+    android:orientation="vertical" >
+     
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:layout_marginTop="20dip"/>
+
+   <Button
+       android:id="@+id/btnsubmissions"
+       style="@style/styleName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:layout_marginTop="80dip"
+       android:background="@null"
+       android:text="@string/Policies"
+       android:textColor="@color/black"
+       android:textSize="20sp"
+       android:textStyle="bold" />
+
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/RateEngine"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/btnrateengine"
+        android:layout_marginTop="80dip"
+        android:background="@null"/>
+ 
+</LinearLayout>
