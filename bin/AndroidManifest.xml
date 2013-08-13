@@ -11,11 +11,11 @@
     <!-- Allow user to make a phone call  -->
     <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
     
-    <uses-sdk android:minSdkVersion="7"/>
+    <uses-sdk android:minSdkVersion="7" 
+       />
     <application
-        android:name=".GlobalVariable"
         android:icon="@drawable/ic_launcher"
-        android:label="@drawable/agentpitstop" android:allowClearUserData="true">
+        android:label="@drawable/agentpitstop" android:allowClearUserData="true" android:allowBackup="true" android:name="GlobalVariable">
         <activity
             android:label="@string/app_name"
             android:name=".DashboardActivity" android:launchMode="standard">

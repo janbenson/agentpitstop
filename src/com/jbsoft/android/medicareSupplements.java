@@ -1,8 +1,11 @@
 package com.jbsoft.android;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+
  
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
@@ -10,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.jbsoft.library.JSONParser;
+
 import com.jbsoft.library.UserFunctions;
  
 import android.app.ListActivity;
@@ -17,7 +21,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.SimpleAdapter; 
 public class medicareSupplements extends ListActivity{
@@ -104,13 +107,14 @@ public class medicareSupplements extends ListActivity{
 		      // Loading INBOX in Background Thread
 		        new Loadmedicaresupps().execute();
 		 }
-		 /**
+		     /**
 		     * Background Async Task to Load medicare supplement rates selected on rate engine and then 
 		     *  by making HTTP Request
 		     * */
 		    class Loadmedicaresupps extends AsyncTask<String, String, String> {
 		 
-		        /**
+
+				/**
 		         * Before starting background thread Show Progress Dialog
 		         * */
 		        @Override
@@ -123,6 +127,7 @@ public class medicareSupplements extends ListActivity{
 		            pDialog.show();
 		        }
 
+				@SuppressWarnings("unchecked")
 				@Override
 				/**
 		         * getting Inbox JSON
@@ -147,14 +152,15 @@ public class medicareSupplements extends ListActivity{
 					  userparm.setRatejson(ratejson);
 					  userparm.setNextTabActivity("2");
 		             String temp;
+		             
 		 
-		            // Check your log cat for JSON reponse
+		            // Check your log cat for JSON response
 		           //Log.d("medicareSupplements JSON: ", rate.toString());
 		 
 		            try {
 		                medsupps = ratejson.getJSONArray("rates");
-		                // looping through All messages
-		                for (int i = 0; i < medsupps.length(); i++) {
+		                // looping through medicare supplement records
+		                for (int i = 0; i < medsupps.length(); i++) {	
 		                    JSONObject c = medsupps.getJSONObject(i);
 		 
 		                    // Storing each json item in variable
@@ -218,8 +224,9 @@ public class medicareSupplements extends ListActivity{
 	            } catch (JSONException e) {
 		                e.printStackTrace();
 		            }
-		 
-		            return null;
+
+		                
+		            return null; 
 		        }
 
 				public void onBackPressed() {
@@ -241,8 +248,22 @@ public class medicareSupplements extends ListActivity{
 		            pDialog.dismiss();
 		            // updating UI from Background Thread
 		            runOnUiThread(new Runnable() {
+			           
 		                @Override
 						public void run() {
+		                	Collections.sort(medsupps_List, new Comparator<HashMap<String, String>>() {
+		                	    public int compare(HashMap<String, String> mapping1,
+		                	                       HashMap<String, String> mapping2) {
+		                	        String valueOne = mapping1.get("rate");
+		                	        String valueTwo = mapping2.get("rate");
+		                	        try {
+		                	            return Integer.valueOf(valueOne).compareTo(Integer.valueOf(valueTwo));
+		                	        } catch(NumberFormatException e) {
+		                	            return valueOne.compareTo(valueTwo);
+		                	        }
+		                	    }
+		                	});	
+		                	   
 		                    /**
 		                     * Updating parsed JSON data into ListView
 		                     * */
@@ -254,33 +275,7 @@ public class medicareSupplements extends ListActivity{
 		                    // updating listview
 		                    setListAdapter(adapter);
 		                    
-		                    /*   ListView lv = getListView();
-					         
-			                // Launching new screen on Selecting Single ListItem
-			                lv.setOnItemClickListener(new OnItemClickListener() {
-			         
-			                    @Override
-			                    public void onItemClick(AdapterView<?> parent, View view,
-			                            int position, long id) {
-			                        // getting values from selected ListItem
-			                        String company = ((TextView) view.findViewById(R.id.company)).getText().toString();
-			                    	String plan = ((TextView) view.findViewById(R.id.plan)).getText().toString();
-			                        String rate = ((TextView) view.findViewById(R.id.rate)).getText().toString();
-			                        String payoption = ((TextView) view.findViewById(R.id.rate)).getText().toString();
-		
-			                        // Starting new intent
-			                        Intent in = new Intent(medicareSupplements.this, SingleMenuItemActivityMedSupps.class);
-
-			                        in.putExtra(TAG_COMPANY, company);
-			                        in.putExtra(TAG_PLAN, medsupp_List.get(position).get(TAG_PLAN));
-			                        in.putExtra(TAG_RATE, rate);
-			                        in.putExtra(TAG_PAYOPTION, payoption);
-			                        startActivity(in);
-			                    }
-
-
-								
-			                });*/
+		                  
 		                    
 		                }
 		            }
