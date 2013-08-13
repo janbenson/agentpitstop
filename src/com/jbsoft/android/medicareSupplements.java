@@ -269,8 +269,8 @@ public class medicareSupplements extends ListActivity{
 		                     * */
                                     ListAdapter adapter = new SimpleAdapter(
 		                            medicareSupplements.this, medsupps_List,
-		                            R.layout.medsupp_list_item, new String[] { TAG_COMPANY, TAG_PLAN, TAG_RATE,TAG_PAYOPTION},
-		                            new int[] { R.id.company, R.id.plan, R.id.rate,R.id.payoption });
+		                            R.layout.medsupp_list_item, new String[] { TAG_COMPANY, TAG_PLAN, TAG_RATE,TAG_PAYOPTION,TAG_DATE},
+		                            new int[] { R.id.company, R.id.plan, R.id.rate,R.id.payoption,R.id.ratedate });
 		                  
 		                    // updating listview
 		                    setListAdapter(adapter);

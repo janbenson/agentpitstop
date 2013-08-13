@@ -1,6 +1,8 @@
 package com.jbsoft.android;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import org.json.JSONArray;
@@ -92,8 +94,19 @@ public class perscriptionDrugplan  extends ListActivity{
 	            } catch (JSONException e) {
 		                e.printStackTrace();
 		            }
-		        
-
+		            
+		            Collections.sort(pdp_List, new Comparator<HashMap<String, String>>() {
+                	    public int compare(HashMap<String, String> mapping1,
+                	                       HashMap<String, String> mapping2) {
+                	        String valueOne = mapping1.get("premium");
+                	        String valueTwo = mapping2.get("premium");
+                	        try {
+                	            return Integer.valueOf(valueOne).compareTo(Integer.valueOf(valueTwo));
+                	        } catch(NumberFormatException e) {
+                	            return valueOne.compareTo(valueTwo);
+                	        }
+                	    }
+                	});	
 				
 
 	

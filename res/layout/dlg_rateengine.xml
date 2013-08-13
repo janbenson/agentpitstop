@@ -1,102 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
+    android:id="@+id/RelativeLayout1"
+    style="@style/AppTheme"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|center_horizontal"
     android:background="@color/aps_gray"
-    android:orientation="vertical"
-    android:padding="8dip" >
+    android:clipToPadding="true"
+    android:orientation="horizontal"
+    android:scrollbarAlwaysDrawVerticalTrack="true" >
 
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/btn_submit" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@color/apslight_gray"
+        android:text="@string/age_prompt"
+        android:textColor="@color/apslight_gray"
+        android:textSize="@dimen/font_medium" />
 
-         <EditText
-            android:id="@+id/editText1"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:ems="10"
-            android:inputType="number" />
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:inputType="text|none|number"
+        android:prompt="@string/age_prompt" >
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/editText1"
-            android:layout_alignBottom="@+id/editText1"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/editText1"
-            android:ems="10"
-            android:inputType="text|none|number"
-            android:prompt="@string/age_prompt" />
+        <requestFocus />
+    </EditText>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/editText2"
-            android:layout_alignParentLeft="true"
-            android:text="@string/age_prompt"
-            android:textColor="@color/black" />
-         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView2"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:text="@string/zipcode"
-            android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/editText1"
+        android:text="@string/zipcode"
+        android:textColor="@color/apslight_gray"
+        android:textSize="@dimen/font_medium" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingBottom="16dip"
-            android:text="@string/rateengineprompt"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_small" />
+    <CheckBox
+        android:id="@+id/checkBox_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:checked="true"
+        android:text="@string/sexmale" />
 
-        <CheckBox
-            android:id="@+id/checkBox_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editText1"
-            android:layout_below="@+id/editText1"
-            android:layout_marginTop="27dp"
-            android:checked="true"
-            android:text="@string/sexmale" />
+    <CheckBox
+        android:id="@+id/checkBox_smoker"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox_male"
+        android:layout_below="@+id/checkBox_male"
+        android:paddingLeft="@android:dimen/app_icon_size"
+         android:text="@string/smoker" />
 
-        <CheckBox
-            android:id="@+id/checkBox_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/checkBox_male"
-            android:layout_alignBottom="@+id/checkBox_male"
-            android:layout_alignRight="@+id/editText2"
-            android:layout_marginRight="14dp"
-            android:text="@string/sexfemale" />
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox_smoker"
+        android:layout_below="@+id/checkBox_smoker"
+        android:paddingBottom="16dip"
+        android:text="@string/rateengineprompt"
+        android:textColor="@color/aps_green"
+        android:textSize="@dimen/font_small"
+        android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/checkBox_smoker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/checkBox_male"
-            android:layout_marginTop="18dp"
-            android:text="@string/smoker" />
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/editText2"
+        android:ems="10"
+        android:inputType="number" />
 
-        <CheckBox
-            android:id="@+id/checkBox_nonsmoker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/checkBox_smoker"
-            android:layout_alignBottom="@+id/checkBox_smoker"
-            android:layout_alignLeft="@+id/checkBox_female"
-            android:checked="true"
-            android:text="@string/nonsmoker" />
-    </RelativeLayout>
+    <CheckBox
+        android:id="@+id/checkBox_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBox_smoker"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_marginLeft="12dp"
+        android:text="@string/sexfemale" />
+
+    <CheckBox
+        android:id="@+id/checkBox_nonsmoker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBox_female"
+        android:layout_below="@+id/checkBox_female"
+        android:checked="true"
+        android:text="@string/nonsmoker" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/btn_submit" />
+
+</RelativeLayout>

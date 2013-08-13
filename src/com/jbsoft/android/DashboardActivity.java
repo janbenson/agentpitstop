@@ -89,9 +89,9 @@ public class DashboardActivity extends TabActivity {
     	private void setRateTabs()
     	{
     			
-	        addTab("Medicare Supplements", R.drawable.rates, medicareSupplements.class);
-	        addTab("Medicare Advantage", R.drawable.policies, medicareAdvantage.class);
-       		addTab("Perscription Drug Plan", R.drawable.contacts, perscriptionDrugplan.class);
+	        addTab("Supplements", R.drawable.rates, medicareSupplements.class);
+	        addTab("Advantage", R.drawable.policies, medicareAdvantage.class);
+       		addTab("PDP", R.drawable.contacts, perscriptionDrugplan.class);
        		addTab("Home",  R.drawable.contacts, homepage.class);
     	}  
      
