@@ -45,7 +45,7 @@ public class reportsActivity extends TabActivity {
 		Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
 		TabSpec tabSpecSupps = tabHost
 			.newTabSpec("Medicare Supplements")
-			.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
+			.setIndicator("", resources.getDrawable(R.drawable.vb1))
 			.setContent(intentSupps);
 
 		// Medicare Advantage tab

@@ -28,6 +28,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
  
 public class UserFunctions {
@@ -262,5 +266,5 @@ public class UserFunctions {
 	    return ret;
 	}
 	
-    
+	 
 }

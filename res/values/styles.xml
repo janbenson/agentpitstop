@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -20,4 +20,17 @@
     <style name="styleName">
         <item name="android:scaleType">fitCenter</item>
     </style>
-</resources>
+
+    <style name="TabTextViewStyle">
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="app_theme" parent="android:Theme.NoTitleBar">
+		<item name="android:windowBackground">@drawable/app_background</item>
+	</style>
+	
+     <!-- A theme for a custom dialog appearance.  Here we use an ugly
+         custom frame. -->
+    <style name="Theme.CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/filled_box</item>
+    </style>
+ </resources>

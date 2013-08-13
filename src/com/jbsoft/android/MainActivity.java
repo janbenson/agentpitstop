@@ -19,6 +19,7 @@ public class MainActivity extends TabActivity {
 	    requestWindowFeature(Window.FEATURE_RIGHT_ICON);
 		setContentView(R.layout.main);
         setFeatureDrawableResource(Window.FEATURE_RIGHT_ICON, R.drawable.vb1);
+       
 		Intent i = getIntent();
         Selects= i.getStringExtra("Selection");
         Resources resources = getResources(); 
@@ -80,7 +81,7 @@ public class MainActivity extends TabActivity {
 			Intent intentSupps = new Intent().setClass(this, medicareSupplements.class);
 			TabSpec tabSpecSupps = tabHost
 				.newTabSpec("Medicare Supplements")
-				.setIndicator("", resources.getDrawable(R.drawable.icon_android_config))
+				.setIndicator("", resources.getDrawable(R.drawable.vb1))
 				.setContent(intentSupps);
 	
 			// Medicare Advantage tab

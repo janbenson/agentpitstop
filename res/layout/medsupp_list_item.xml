@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/apslight_green"
     android:orientation="vertical" >
  
     <!-- Company -->
@@ -13,6 +14,7 @@
         android:paddingBottom="4sp"
         android:paddingLeft="8sp"
         android:paddingTop="8sp"
+        android:textColor="@color/aps_gray"
         android:textSize="20sp"
         android:textStyle="bold" />
     
@@ -29,6 +31,7 @@
         android:layout_toRightOf="@+id/plan"
         android:paddingBottom="6sp"
         android:paddingLeft="8sp"
+        android:textColor="@color/aps_gray"
         android:textSize="15sp" />
 
     <TextView
@@ -40,6 +43,7 @@
         android:paddingBottom="4sp"
         android:paddingLeft="8sp"
         android:paddingTop="8sp"
+        android:textColor="@color/aps_gray"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -50,6 +54,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="20dp"
         android:layout_toRightOf="@+id/rate"
-        android:padding="8sp" />
+        android:padding="8sp"
+        android:textColor="@color/aps_gray" />
 
 </RelativeLayout>

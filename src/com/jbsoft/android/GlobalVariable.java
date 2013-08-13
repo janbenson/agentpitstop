@@ -3,6 +3,8 @@
  */
 package com.jbsoft.android;
 
+import org.json.JSONObject;
+
 /**
  * @author jan benson
  *
@@ -19,6 +21,7 @@ public class GlobalVariable extends Application
       String zip;
       String smoker;
       String startDate;
+      JSONObject ratejson; 
       /**
 	 * @return the startDate
 	 */
@@ -158,4 +161,18 @@ public class GlobalVariable extends Application
       {
     	  saveurl = s;
       }//End method
+
+	/**
+	 * @return the ratejson
+	 */
+	public JSONObject getRatejson() {
+		return ratejson;
+	}
+
+	/**
+	 * @param ratejson the ratejson to set
+	 */
+	public void setRatejson(JSONObject ratejson) {
+		this.ratejson = ratejson;
+	}
 }//End Class

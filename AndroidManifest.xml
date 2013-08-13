@@ -14,9 +14,8 @@
     <uses-sdk android:minSdkVersion="7"/>
     <application
         android:name=".GlobalVariable"
-        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" android:allowClearUserData="true">
+        android:label="@drawable/agentpitstop" android:allowClearUserData="true">
         <activity
             android:label="@string/app_name"
             android:name=".DashboardActivity" android:launchMode="standard">
@@ -35,9 +34,12 @@
  
         <!--  Register Activity -->
        
-        
-        <activity 
-            android:name=".rateengine"/>
+        <activity android:name=".rateengine"
+                android:label="@string/RateEngine"
+                android:theme="@style/Theme.CustomDialog"/>
+ 
+          <activity 
+            android:name=".homepage" />
         <activity 
             android:name=".medicareSupplements" />
         <activity 

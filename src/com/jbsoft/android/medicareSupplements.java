@@ -14,6 +14,7 @@ import com.jbsoft.library.UserFunctions;
  
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -141,14 +142,17 @@ public class medicareSupplements extends ListActivity{
 		            @SuppressWarnings("unused")
 					JSONObject json1 = jsonParser.getJSONFromUrl(apploginurl.saveurl, params);
 		            
-		            JSONObject json2 =uf.getRates(Age, Zip, Sex, Plan, Smoker);
+		            JSONObject ratejson =uf.getRates(Age, Zip, Sex, Plan, Smoker);
+		            GlobalVariable userparm = ((GlobalVariable)getApplicationContext());
+					  userparm.setRatejson(ratejson);
+					  userparm.setNextTabActivity("2");
 		             String temp;
 		 
 		            // Check your log cat for JSON reponse
-		            Log.d("medicareSupplements JSON: ", json2.toString());
+		           //Log.d("medicareSupplements JSON: ", rate.toString());
 		 
 		            try {
-		                medsupps = json2.getJSONArray("rates");
+		                medsupps = ratejson.getJSONArray("rates");
 		                // looping through All messages
 		                for (int i = 0; i < medsupps.length(); i++) {
 		                    JSONObject c = medsupps.getJSONObject(i);
@@ -217,8 +221,18 @@ public class medicareSupplements extends ListActivity{
 		 
 		            return null;
 		        }
-		 
+
+				public void onBackPressed() {
+					System.out.println("APS_Medsups back to main onBackPressed Called");
+				   GlobalVariable nextGlobalVariable = ((GlobalVariable)getApplicationContext());
+				   nextGlobalVariable.setNextTabActivity(null);
+				   Intent setIntent = new Intent();
+				   setIntent.addCategory(Intent.CATEGORY_HOME);
+				   setIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				   startActivity(setIntent);
+				}
 		        /**
+		         * 
 		         * After completing background task Dismiss the progress dialog
 		         * **/
 		        @Override
@@ -270,6 +284,7 @@ public class medicareSupplements extends ListActivity{
 		                    
 		                }
 		            }
+		            
                   );
 		 
 		        }
