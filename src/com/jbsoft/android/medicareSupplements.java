@@ -53,6 +53,10 @@ public class medicareSupplements extends ListActivity{
 	private static final String TAG_PARTB = "partb";
 	private static final String TAG_SMOKER = "smoker";
 	private static final String TAG_RATE = "rate";
+	private static final String TAG_RATE_WF = "rate_wf";
+	private static final String TAG_RATE_AMT = "rate_amt";
+	private static final String TAG_RATE_CENTS = "rate_cents";
+	private static final String TAG_RATE_FREQUENCY = "rate_frequency";
 	private static final String TAG_DATE= "date";
 	private static final String TAG_RECRUIT= "recruit";
 		
@@ -193,6 +197,16 @@ public class medicareSupplements extends ListActivity{
 		                    smoker = temp;
 		                    temp="";
 		                    String rate = c.getString(TAG_RATE);
+		                    String delims = "[$. ]+";
+		                    String[] tokens = rate.split(delims);
+		                    String rate_sign = tokens[0];
+		                    String rate_amt = tokens[1];
+		                    String rate_cents = tokens[2];
+		                    String rate_frequency = tokens[3];
+		                    String rate_wf = rate_sign + rate_amt + "." + rate_cents ;
+		                    rate_amt = rate_amt + rate_cents;
+		                    
+
 		                    String date = c.getString(TAG_DATE);
 		                    String recruit = c.getString(TAG_RECRUIT);
 		                    temp = recruit.replaceAll("", "none");
@@ -213,7 +227,9 @@ public class medicareSupplements extends ListActivity{
 		                    map.put(TAG_AGE, age);
 		                    map.put(TAG_PARTB ,partb);
 		                    map.put(TAG_SMOKER,smoker);
-		                    map.put(TAG_RATE,rate);
+		                    map.put(TAG_RATE_AMT,rate_amt);
+		                    map.put(TAG_RATE_WF,rate_wf);
+		                    map.put(TAG_RATE_FREQUENCY,rate_frequency);
 		                    map.put(TAG_DATE, date);
 		                    map.put(TAG_RECRUIT ,recruit);
 		                    
@@ -254,10 +270,10 @@ public class medicareSupplements extends ListActivity{
 		                	Collections.sort(medsupps_List, new Comparator<HashMap<String, String>>() {
 		                	    public int compare(HashMap<String, String> mapping1,
 		                	                       HashMap<String, String> mapping2) {
-		                	        String valueOne = mapping1.get("rate");
-		                	        String valueTwo = mapping2.get("rate");
+		                	        String valueOne = mapping1.get("rate_amt");
+		                	        String valueTwo = mapping2.get("rate_amt");
 		                	        try {
-		                	            return Integer.valueOf(valueOne).compareTo(Integer.valueOf(valueTwo));
+		                	        	   return Integer.valueOf(valueOne).compareTo(Integer.valueOf(valueTwo));
 		                	        } catch(NumberFormatException e) {
 		                	            return valueOne.compareTo(valueTwo);
 		                	        }
@@ -269,8 +285,8 @@ public class medicareSupplements extends ListActivity{
 		                     * */
                                     ListAdapter adapter = new SimpleAdapter(
 		                            medicareSupplements.this, medsupps_List,
-		                            R.layout.medsupp_list_item, new String[] { TAG_COMPANY, TAG_PLAN, TAG_RATE,TAG_PAYOPTION,TAG_DATE},
-		                            new int[] { R.id.company, R.id.plan, R.id.rate,R.id.payoption,R.id.ratedate });
+		                            R.layout.medsupp_list_item, new String[] { TAG_COMPANY, TAG_PLAN, TAG_RATE_WF,TAG_RATE_FREQUENCY,TAG_DATE},
+		                            new int[] { R.id.company, R.id.plan, R.id.rate_wf,R.id.payoption,R.id.ratedate });
 		                  
 		                    // updating listview
 		                    setListAdapter(adapter);

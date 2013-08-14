@@ -23,26 +23,13 @@
         android:textColor="@color/apslight_gray"
         android:textSize="@dimen/font_medium" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:ems="10"
-        android:inputType="text|none|number"
-        android:prompt="@string/age_prompt" >
-
-        <requestFocus />
-    </EditText>
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/editText2"
         android:text="@string/zipcode"
         android:textColor="@color/apslight_gray"
         android:textSize="@dimen/font_medium" />
@@ -69,23 +56,12 @@
         android:id="@+id/TextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox_smoker"
         android:layout_below="@+id/checkBox_smoker"
         android:paddingBottom="16dip"
         android:text="@string/rateengineprompt"
         android:textColor="@color/aps_green"
         android:textSize="@dimen/font_small"
         android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_marginLeft="40dp"
-        android:layout_toRightOf="@+id/editText2"
-        android:ems="10"
-        android:inputType="number" />
 
     <CheckBox
         android:id="@+id/checkBox_female"
@@ -113,5 +89,29 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="@string/btn_submit" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSubmit"
+        android:layout_marginLeft="48dp"
+        android:layout_toRightOf="@+id/textView2"
+        android:ems="10"
+        android:inputType="text|none|number"
+        android:prompt="@string/age_prompt" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText2"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_alignLeft="@+id/textView2"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -23,11 +23,10 @@
     <!-- Payoption-->
 
     <TextView
-        android:id="@+id/rate"
-        android:layout_width="75dp"
+        android:id="@+id/rate_wf"
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignBottom="@+id/company"
-        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/company"
         android:layout_toRightOf="@+id/plan"
         android:paddingBottom="6sp"
@@ -66,5 +65,7 @@
         android:layout_below="@+id/company"
         android:textColor="@color/black"
         android:textStyle="bold" />
+
+    
 
 </RelativeLayout>

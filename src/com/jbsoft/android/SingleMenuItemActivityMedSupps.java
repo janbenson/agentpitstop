@@ -30,7 +30,9 @@ public class SingleMenuItemActivityMedSupps extends Activity{
 	    email = i.getStringExtra("email");
 
 
-	    TextView rate = (TextView) findViewById(R.id.rate);
+	    TextView rate_amt = (TextView) findViewById(R.id.rate_amt);
+	    TextView rate_frequency = (TextView) findViewById(R.id.rate_frequency);
+	    
 	    TextView payplan = (TextView) findViewById(R.id.payoption);
 	    TextView comp = (TextView) findViewById(R.id.company);
 	    TextView planview = (TextView) findViewById(R.id.plan);
