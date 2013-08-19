@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/apslight_green"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/plan"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:paddingBottom="4sp"
+        android:paddingLeft="8sp"
+        android:paddingTop="8sp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/premium"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gapcoverage"
+        android:padding="8sp"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/drugbenifittype"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/plan"
+        android:paddingBottom="6sp"
+        android:paddingLeft="8sp"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/drugdeductable"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rating"
+        android:layout_toRightOf="@+id/drugbenifittype"
+        android:paddingBottom="6sp"
+        android:paddingLeft="8sp"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/gapcoverage"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/plan"
+        android:paddingBottom="4sp"
+        android:paddingLeft="8sp"
+        android:paddingTop="8sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="75sp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/premium"
+        android:layout_alignBottom="@+id/premium"
+        android:layout_marginLeft="29dp"
+        android:layout_toRightOf="@+id/premium"
+        android:padding="8sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/lis"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rating"
+        android:layout_alignBottom="@+id/rating"
+        android:layout_toLeftOf="@+id/gapcoverage"
+        android:paddingBottom="4sp"
+        android:paddingLeft="8sp"
+        android:paddingTop="8sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/drugdeductable"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="25dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/aps_green"
+    android:orientation="vertical"
+    android:padding="8dip"
+    android:tag="@string/tobacco_prompt" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnSubmissions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/btn_submissions" />
+
+        <DatePicker
+            android:id="@+id/datePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="63dp" />
+
+        <DatePicker
+            android:id="@+id/datePicker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/datePicker1"
+            android:layout_alignBottom="@+id/datePicker1"
+            android:layout_alignLeft="@+id/btnSubmissions"
+            android:layout_marginLeft="67dp" />
+
+    </RelativeLayout>
+
+	
+
+</LinearLayout>

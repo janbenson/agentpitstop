@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">agentpitstop</string>
+   <string name="welcometitle">Welcome to AgentPitstop.com</string>
+   <string name="wparagraph1">The agent mobile resource for Van Berg and Associates agents and their affiliates</string>
+   <string name="wparagraph2">This page acts as the home page .. as you can see its displaying the beginning text from the web home page it is merely a representation of what the front facing page can look like</string> 
+    <string name="sexfemale">female</string>
+    <string name="sexmale">male</string>
+    <string name="smoker">Smoker</string>
+    <string name="nonsmoker">NonSmoker</string>
+   
+    <string-array name="Tobacco">
+        <item>Non-Smoker</item>
+        <item>Smoker</item>
+    </string-array>
+     <string-array name="Sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+   <string-array name="contactname">
+      <item>"Aaron Lieberfarb"</item>
+	  <item>Austin Allen</item>
+	  <item>Brittany Modesto</item>
+	  <item> Cindy Christian</item>
+	  <item>Eric Nunes</item>
+	  <item>Ernesto Jaboneta</item>
+	  <item>Harold Pennington</item>
+	  <item>Ivan Lopez</item>
+	  <item>Jerold Robinson</item>
+	  <item> Keith Hansen</item>
+	  <item>Leo Luna</item>
+	  <item>Sara Thompto</item>
+	  <item>Sheri Welch</item>
+	  <item>Tristan Mendoza</item>
+	  <item>Troy Bergeron</item>
+	  <item>Tyler Williams</item>
+  </string-array>
+   <string-array name="ext_list">
+   <item>"6026"</item>
+   <item>"6030"</item>
+   <item>"6010"</item>
+   <item>"6029"</item>
+   <item>"6044"</item>
+   <item>"6012"</item>
+   <item>"6033"</item>
+   <item>"6043"</item>
+   <item>"6032"</item>
+   <item>"6023"</item>
+   <item>"6045"</item>
+   <item>"6031"</item>
+   <item>"6034"</item>
+   <item>"6025"</item>
+   <item>"6011"</item>
+  </string-array>
+   <string-array name="phone_list">
+   <item>"877-228-7750"</item>
+   <item>"888-983-7093"</item>
+   <item>""</item>
+   <item>""</item>
+   <item>"800-260-2617"</item>
+   <item>""</item>
+   <item>"800-780-7599"</item>
+   <item>""</item>
+   <item>"877-364-0155"</item>
+   <item>""</item>
+   <item>"877-228-7753"</item>
+   <item>"800-780-9336"</item>
+   <item>""</item>
+   <item>"800-260-4639"</item>
+   <item>"877-776-8919"</item>
+   <item>"800-780-2802"</item>
+  </string-array>
+     
+    <string name="age_prompt">Age</string>
+    <string name="tobacco_prompt">Tobacco</string>
+    <string name="sex_prompt">Sex</string>
+    <string name="rateengineprompt">Enter the members information to see results. Only the top 25 results will be displayed so it is important to enter the members information as complete as possible.</string>
+    <string name="btn_submit">Get Rates</string>
+    <string name="btn_submissions">Get Policies</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Policies">Submitted Policies</string>
+    <string name="RateEngine">Rate Engine</string>
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+  
+     
+     <string name="First">First</string>
+    <string name="Last">Last</string>
+    <string name="Company">Company</string>
+    <string name="Plan">Plan</string>
+    <string name="Submitted">Submitted</string>
+    <string name="Effective">Effective</string>
+     <string name="Status">Status</string>
+     
+     
+    <string name="Register">No account. Register Me!&quot;</string>
+    
+    <string name="zipcode">zip</string>
+    
+    <string name="submitted">Submitted</string>
+    
+    <string name="text">Text</string>
+
+ </resources>

@@ -1,0 +1,48 @@
+{"1688599"
+
+
+:
+{"id":"1688599",
+"company":"Family Life",
+"plan":"F",
+"payoption":"Monthly",
+"zip":"ALL EXCEPT 900-928, 930, 931",
+"county":"",
+"state":"CA",
+"sex":"",
+"age":"66",
+"partb":"",
+"smoker":"Non-Smoker",
+"rate":"$154.50 Monthly",
+"date":"10-01-12",
+"recruit":"0"},
+
+"1688887":
+
+{"id":"1688887",
+"company":"Family Life",
+"plan":"F",
+"payoption":"Monthly",
+"zip":"ALL EXCEPT 900-928, 930, 931",
+"county":"",
+"state":"CA",
+"sex":"",
+"age":"66",
+"partb":"",
+"smoker":"Smoker",
+"rate":"$171.83 Monthly",
+"date":"10-01-12",
+"recruit":"0"},
+
+
+"1854428":{"id":"1854428","company":"Gerber","plan":"F","payoption":"Monthly","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Non-Smoker","rate":"$173.99 Monthly","date":"01-01-13","recruit":"0"},
+"1854431":{"id":"1854431","company":"Gerber","plan":"F","payoption":"Monthly","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Smoker","rate":"$199.99 Monthly","date":"01-01-13","recruit":"0"},
+"1916352":{"id":"1916352","company":"Blue Shield","plan":"F","payoption":"Monthly","zip":"","county":"Alameda, Contra Costa, Napa, Siskiyou, Yolo","state":"CA","sex":"","age":"66","partb":"","smoker":"Non-Smoker","rate":"$133.00 Monthly","date":"12-01-12","recruit":"0"},
+"1917738":{"id":"1917738","company":"Blue Shield","plan":"F","payoption":"Monthly","zip":"","county":"Alameda, Contra Costa, Napa, Siskiyou, Yolo","state":"CA","sex":"","age":"66","partb":"","smoker":"Smoker","rate":"$159.00 Monthly","date":"12-01-12","recruit":"0"},
+"1920059":{"id":"1920059","company":"United of Omaha","plan":"F","payoption":"Annually","zip":"","county":"","state":"CA","sex":"ALL","age":"66","partb":"","smoker":"Non-Smoker","rate":"$145.02 Monthly","date":"02-01-13","recruit":"0"},
+"1920202":{"id":"1920202","company":"United of Omaha","plan":"F","payoption":"Annually","zip":"","county":"","state":"CA","sex":"ALL","age":"66","partb":"","smoker":"Smoker","rate":"$166.69 Monthly","date":"02-01-13","recruit":"0"},
+"1971307":{"id":"1971307","company":"Everence","plan":"F","payoption":"Monthly","zip":"934, 941-945, 949, 952-954, 960","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Non-Smoker","rate":"$127.77 Monthly","date":"12-01-12","recruit":"0"},
+"1971451":{"id":"1971451","company":"Everence","plan":"F","payoption":"Monthly","zip":"934, 941-945, 949, 952-954, 960","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Smoker","rate":"$140.00 Monthly","date":"12-01-12","recruit":"0"},
+"2016486":{"id":"2016486","company":"Standard Life","plan":"F","payoption":"Annually","zip":"919-921, 945-948","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Non-Smoker","rate":"$187.83 Monthly","date":"01-01-13","recruit":"0"},
+"2016662":{"id":"2016662","company":"Standard Life","plan":"F","payoption":"Annually","zip":"919-921, 945-948","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Smoker","rate":"$208.7 Monthly","date":"01-01-13","recruit":"0"},
+"2150196":{"id":"2150196","company":"Stonebridge","plan":"F","payoption":"Monthly","zip":"919-925, 930, 932-933, 935-937, 945-948","county":"","state":"CA","sex":"Female","age":"66","partb":"","smoker":"Non-Smoker","rate":"$137.37 Monthly","date":"02-20-13","recruit":"0"},"2150372":{"id":"2150372","company":"Stonebridge","plan":"F","payoption":"Monthly","zip":"919-925, 930, 932-933, 935-937, 945-948","county":"","state":"CA","sex":"Female","age":"66","partb":"","smoker":"Smoker","rate":"$151.11 Monthly","date":"02-20-13","recruit":"0"},"2190642":{"id":"2190642","company":"Sentinel","plan":"F","payoption":"Monthly","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Non-Smoker","rate":"$178.73 Monthly","date":"01-01-13","recruit":"0"},"2190856":{"id":"2190856","company":"Sentinel","plan":"F","payoption":"Monthly","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"","age":"66","partb":"","smoker":"Smoker","rate":"$205.53 Monthly","date":"01-01-13","recruit":"0"},"2285316":{"id":"2285316","company":"Aflac","plan":"F","payoption":"Annually","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"Female","age":"66","partb":"","smoker":"Non-Smoker","rate":"$149.44 Monthly","date":"03-20-13","recruit":"0"},"2285388":{"id":"2285388","company":"Aflac","plan":"F","payoption":"Annually","zip":"919-925, 930-931, 940-949","county":"","state":"CA","sex":"Female","age":"66","partb":"","smoker":"Smoker","rate":"$171.86 Monthly","date":"03-20-13","recruit":"0"},"2511788":{"1688679":{"id":"1688679","company":"Family Life","plan":"F","payoption":"Monthly","zip":"ALL EXCEPT 900-928, 930, 931","county":"","state":"CA","sex":"","age":"76","partb":"","smoker":"Non-Smoker","rate":"$223.50 Monthly","date":"10-01-12","recruit":"0"},

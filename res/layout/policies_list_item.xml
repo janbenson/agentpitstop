@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/apslight_green"
+    android:orientation="vertical" >
+ 
+    <!-- First,Last Names -->
+    
+    <!-- Company  -->
+
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/last"
+        android:layout_alignBottom="@+id/last"
+        android:layout_alignParentLeft="true"
+        android:paddingBottom="4dip"
+        android:paddingLeft="8dip"
+        android:paddingTop="8dip"
+        android:textSize="20sp"
+        android:textStyle="bold" 
+        android:textColor="@color/aps_gray" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:text="@string/First"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/aps_gray" />
+
+    <TextView
+        android:id="@+id/last"
+        android:layout_width="75sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp"
+        android:gravity="center"
+        android:paddingBottom="4dip"
+        android:paddingLeft="8dip"
+        android:paddingTop="8dip"
+        android:textSize="20sp"
+        android:textStyle="bold" 
+        android:textColor="@color/aps_gray" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/first"
+        android:layout_toRightOf="@+id/first"
+        android:text="@string/Last"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/aps_gray" />
+
+    <TextView
+        android:id="@+id/rate_frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/last"
+        android:text="@string/Company"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/aps_gray" />
+
+    <TextView
+        android:id="@+id/company"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/last"
+        android:layout_alignTop="@+id/last"
+        android:layout_toRightOf="@+id/last"
+        android:paddingBottom="4dip"
+        android:paddingLeft="8dip"
+        android:paddingTop="8dip"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/aps_gray" />
+    
+</RelativeLayout>
