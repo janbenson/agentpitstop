@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout1"
     style="@style/AppTheme"
-    android:layout_width="350dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center|center_horizontal"
     android:background="@color/aps_gray"
@@ -14,8 +14,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:hint="@color/apslight_gray"
@@ -42,15 +41,6 @@
         android:layout_below="@+id/editText2"
         android:checked="true"
         android:text="@string/sexmale" />
-
-    <CheckBox
-        android:id="@+id/checkBox_smoker"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox_male"
-        android:layout_below="@+id/checkBox_male"
-        android:paddingLeft="@android:dimen/app_icon_size"
-         android:text="@string/smoker" />
 
     <TextView
         android:id="@+id/TextView1"
@@ -81,37 +71,40 @@
         android:checked="true"
         android:text="@string/nonsmoker" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center"
-        android:text="@string/btn_submit" />
-
     <EditText
         android:id="@+id/editText2"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnSubmit"
-        android:layout_marginLeft="48dp"
-        android:layout_toRightOf="@+id/textView2"
+        android:layout_below="@id/textView2"
+        android:layout_toRightOf="@+id/editText1"
         android:ems="10"
-        android:inputType="text|none|number"
-        android:prompt="@string/age_prompt" />
+        android:inputType="number"
+        />
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText2"
-        android:layout_alignBottom="@+id/editText2"
         android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
         android:ems="10"
-        android:inputType="number" >
+        android:inputType="number" />
 
-        <requestFocus />
-    </EditText>
+    <CheckBox
+        android:id="@+id/checkBox_smoker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox_male"
+        android:layout_toRightOf="@+id/checkBox_nonsmoker"
+        android:text="@string/smoker" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView1"
+        android:layout_toRightOf="@+id/checkBox_female"
+        android:gravity="center"
+        android:text="@string/btn_submit" />
 
 </RelativeLayout>

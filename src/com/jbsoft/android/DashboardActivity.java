@@ -83,7 +83,7 @@ public class DashboardActivity extends TabActivity {
     	{
     		addTab("Home",  R.drawable.contacts, homepage.class);	
 	        addTab("Rates", R.drawable.rates, rateengine.class);
-	        addTab("Client Policies", R.drawable.policies, Policies.class);
+	        addTab("Policies", R.drawable.policies, Policies.class);
        		addTab("Contacts", R.drawable.contacts, contactInfo.class);	
     	}		
     	private void setRateTabs()

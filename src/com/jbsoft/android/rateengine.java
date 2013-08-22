@@ -22,16 +22,16 @@ public class rateengine extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-            final Dialog dialog = new Dialog(this);
-        	dialog.setContentView(R.layout.dlg_rateengine);
-			age = (EditText) dialog.findViewById(R.id.editText1);	
-			zipcode = (EditText) dialog.findViewById(R.id.editText2);
-			chkMale = (CheckBox) dialog.findViewById(R.id.checkBox_male);
-			chkFemale = (CheckBox) dialog.findViewById(R.id.checkBox_female);
-			chkSmoker = (CheckBox) dialog.findViewById(R.id.checkBox_smoker);
-			chkNonSmoker = (CheckBox) dialog.findViewById(R.id.checkBox_nonsmoker);
-			btnSubmit = (Button) dialog.findViewById(R.id.btnSubmit);
-			dialog.show();
+            //final Dialog dialog = new Dialog(this);
+        	setContentView(R.layout.dlg_rateengine);
+			age = (EditText) findViewById(R.id.editText1);	
+			zipcode = (EditText) findViewById(R.id.editText2);
+			chkMale = (CheckBox) findViewById(R.id.checkBox_male);
+			chkFemale = (CheckBox) findViewById(R.id.checkBox_female);
+			chkSmoker = (CheckBox) findViewById(R.id.checkBox_smoker);
+			chkNonSmoker = (CheckBox) findViewById(R.id.checkBox_nonsmoker);
+			btnSubmit = (Button) findViewById(R.id.btnSubmit);
+			//dialog.show();
 			
 			btnSubmit.setOnClickListener(new View.OnClickListener() {
 		     public void onClick(View v) {
@@ -58,7 +58,7 @@ public class rateengine extends Activity {
 						  
 						  Intent i = new Intent( rateengine.this, DashboardActivity.class );
 						  startActivity( i );
-						  dialog.dismiss();
+						 // dialog.dismiss();
 						  finish();
 						  }
                    }); 

@@ -94,7 +94,7 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f090012;
         public static final int TextView01=0x7f090038;
-        public static final int TextView1=0x7f090019;
+        public static final int TextView1=0x7f090018;
         public static final int backbtn=0x7f09003c;
         public static final int btnChangeEndDate=0x7f09000f;
         public static final int btnChangeStartDate=0x7f09000b;
@@ -109,7 +109,7 @@ public final class R {
         public static final int checkBox_female=0x7f09001a;
         public static final int checkBox_male=0x7f090017;
         public static final int checkBox_nonsmoker=0x7f09001c;
-        public static final int checkBox_smoker=0x7f090018;
+        public static final int checkBox_smoker=0x7f090019;
         public static final int company=0x7f090028;
         public static final int datePicker1=0x7f090046;
         public static final int datePicker2=0x7f090047;

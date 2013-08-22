@@ -16,7 +16,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class SingleMenuItemActivity extends Activity{
 	private String firstname,lastname,company,submitted,effective,status,plan,email,phone;
-
+    private Button backbtn;
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    Intent i = getIntent();
@@ -46,7 +46,7 @@ public class SingleMenuItemActivity extends Activity{
 	    TextView emailview = (TextView) findViewById(R.id.email);
 	    TextView phoneview = (TextView) findViewById(R.id.phone);
 	    Button backbtn = (Button) findViewById(R.id.backbtn);
-	  // backbtn.setOnClickListener((OnClickListener) this); 
+	    //backbtn.setOnClickListener((OnClickListener) this); 
 	    
 	    // getting attached intent data
 	    first.setText(firstname);
@@ -75,9 +75,15 @@ public class SingleMenuItemActivity extends Activity{
 			
 			             
         }) ;
-  	}
-	 public void BackBtnHandler(View view) {
- 	    finish();
- 	}
+        
+       	
+
+	    
+	    
+	    
+	    
+	}public void BackBtnHandler(View view) {
+	    finish();
+	}
 	
 }
