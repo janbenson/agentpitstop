@@ -35,9 +35,8 @@
         android:id="@+id/company"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/first"
-        android:layout_marginTop="32dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/last"
         android:textColor="@color/aps_gray"
         android:textSize="20sp"
         android:textStyle="bold" />

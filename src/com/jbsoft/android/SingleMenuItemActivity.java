@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
@@ -47,7 +48,7 @@ public class SingleMenuItemActivity extends Activity{
 	    TextView phoneview = (TextView) findViewById(R.id.phone);
 	    Button backbtn = (Button) findViewById(R.id.backbtn);
 	    //backbtn.setOnClickListener((OnClickListener) this); 
-	    
+	    String formattednumber = PhoneNumberUtils.formatNumber(phone);
 	    // getting attached intent data
 	    first.setText(firstname);
 	    last.setText(lastname);
@@ -56,7 +57,7 @@ public class SingleMenuItemActivity extends Activity{
 	    submittedview.setText(submitted);
 	    effectiveview.setText(effective);
 	    statusview.setText(status);
-	    phoneview.setText(phone);
+	    phoneview.setText(formattednumber);
 	    emailview.setText(email);
 	    
 

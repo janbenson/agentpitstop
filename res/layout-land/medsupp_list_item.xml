@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/rate_wf"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_toRightOf="@+id/plan"
         android:layout_alignBottom="@+id/plan"
@@ -49,23 +49,21 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/payoption"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ratedate"
-        android:layout_alignTop="@+id/ratedate"
-        android:layout_toRightOf="@+id/ratedate"
-        android:textColor="@color/black" />
-
-    <TextView
         android:id="@+id/ratedate"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/company"
+        android:layout_above="@+id/payoption"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/rate_wf"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    
+    <TextView
+        android:id="@+id/payoption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ratedate"
+        android:textColor="@color/black" />
 
 </RelativeLayout>
