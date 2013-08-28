@@ -13,46 +13,58 @@
         <item>Non-Smoker</item>
         <item>Smoker</item>
     </string-array>
-     <string-array name="Sex">
-        <item>Male</item>
-        <item>Female</item>
+     <string-array name="Plan">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>F</item>
+        <item>F+</item>
+        <item>G</item>
+        <item>K</item>
+        <item>M</item>
+        <item>N</item>
     </string-array>
    <string-array name="contactname">
       <item>"Aaron Lieberfarb"</item>
-	  <item>Austin Allen</item>
-	  <item>Brittany Modesto</item>
-	  <item> Cindy Christian</item>
-	  <item>Eric Nunes</item>
-	  <item>Ernesto Jaboneta</item>
-	  <item>Harold Pennington</item>
-	  <item>Ivan Lopez</item>
-	  <item>Jerold Robinson</item>
-	  <item> Keith Hansen</item>
-	  <item>Leo Luna</item>
-	  <item>Sara Thompto</item>
-	  <item>Sheri Welch</item>
-	  <item>Tristan Mendoza</item>
-	  <item>Troy Bergeron</item>
-	  <item>Tyler Williams</item>
-  </string-array>
-   <string-array name="ext_list">
-   <item>"6026"</item>
-   <item>"6030"</item>
-   <item>"6010"</item>
-   <item>"6029"</item>
-   <item>"6044"</item>
-   <item>"6012"</item>
-   <item>"6033"</item>
-   <item>"6043"</item>
-   <item>"6032"</item>
-   <item>"6023"</item>
-   <item>"6045"</item>
-   <item>"6031"</item>
-   <item>"6034"</item>
-   <item>"6025"</item>
-   <item>"6011"</item>
+	  <item>"Austin Allen"</item>
+	  <item>"Brittany Modesto"</item>
+	  <item>"Cindy Christian"</item>
+	  <item>"Eric Nunes"</item>
+	  <item>"Ernesto Jaboneta"</item>
+	  <item>"Harold Pennington"</item>
+	  <item>"Ivan Lopez"</item>
+	  <item>"Janet B Benson"</item>
+	  <item>"Jerold Robinson"</item>
+	  <item>"John Salvetti"</item>
+	  <item>"Keith Hansen"</item>
+	  <item>"Leo Luna"</item>
+	  <item>"Sara Thompto"</item>
+	  <item>"Sheri Welch"</item>
+	  <item>"Tristan Mendoza"</item>
+	  <item>"Troy Bergeron"</item>
+	  <item>"Tyler Williams"</item>
   </string-array>
    <string-array name="phone_list">
+   <item>"707-322-8368"</item>
+   <item>"925-418-6030"</item>
+   <item>"925-418-6010"</item>
+   <item>"925-418-6029"</item>
+   <item>"925-418-6044"</item>
+   <item>"925-418-6012"</item>
+   <item>"925-418-6033"</item>
+   <item>"925-634-5702"</item>
+   <item>"925-418-6027"</item>
+   <item>"925-418-6032"</item>
+   <item>"925-418-6023"</item>
+   <item>"925-418-6045"</item>
+   <item>"925-418-6042"</item>
+   <item>"925-418-6034"</item>
+   <item>"925-418-6025"</item>
+   <item>"925-418-6011"</item>
+   <item>"925-418-6037"</item>
+   </string-array>
+   <string-array name="tollfree">
    <item>"877-228-7750"</item>
    <item>"888-983-7093"</item>
    <item>""</item>
@@ -61,16 +73,57 @@
    <item>""</item>
    <item>"800-780-7599"</item>
    <item>""</item>
+   <item>""</item>
    <item>"877-364-0155"</item>
    <item>""</item>
    <item>"877-228-7753"</item>
    <item>"800-780-9336"</item>
    <item>""</item>
    <item>"800-260-4639"</item>
+   <item>"800-780-9224"</item>
    <item>"877-776-8919"</item>
    <item>"800-780-2802"</item>
-  </string-array>
-     
+   </string-array>
+   <string-array  name= "fax" >
+    <item>"925-520-2449"</item>    
+	<item>"925-418-6609"</item>
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-418-6006"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-956-5227"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-271-8809"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-520-2449"</item> 
+	<item>"925-418-6007"</item> 
+   </string-array>
+<string-array name = "email">
+    <item>"aaron.lieberfarb@agentpitstop.com"</item> 
+    <item>"austin.allen@agentpitstop.com"</item> 
+	<item>"brittany.modesto@agentpitstop.com"</item> 
+	<item>"cindy.christian@agentpitstop.com"</item> 
+	<item>"eric.nunes@agentpitstop.com"</item> 
+	<item>"ernesto@agentpitstop.com"</item> 
+	<item>"harold.pennington@agentpitstop.com"</item> 
+	<item>"ivan@vanbergins.com" </item>
+	<item>"janet.benson@agentpitstop.com"</item> 
+	<item>"Jerold.Robinson@agentpitstop.com"</item> 
+	<item>"john.salvetti@agentpitstop.com"</item> 
+	<item>"keith.hansen@agentpitstop.com"</item> 
+	<item>"leo.luna@agentpitstop.com"</item> 
+	<item>"sara.thompto@agentpitstop.com"</item> 
+	<item>"sheri.welch@agentpitstop.com"</item> 
+	<item>"tristan.mendoza@agentpitstop.com"</item> 
+	<item>"troy.bergeron@agentpitstop.com"</item> 
+	<item>"tyler.williams@agentpitstop.com"</item>
+</string-array>
     <string name="age_prompt">Age</string>
     <string name="tobacco_prompt">Tobacco</string>
     <string name="sex_prompt">Sex</string>
@@ -101,5 +154,11 @@
     <string name="submitted">Submitted</string>
     
     <string name="text">Text</string>
-
+    <string name="alert_dialog_two_buttons">OK Cancel dialog with a message</string>
+    <string name="alert_dialog_two_buttons2">OK Cancel dialog with a long message</string>
+    <string name="alert_dialog_two_buttons2_msg">Unable to log...... on you have entered a invalid username or password</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_hide">Hide</string>
+    <string name="alert_dialog_something">Something</string>
+    <string name="alert_dialog_cancel">Cancel</string>
  </resources>

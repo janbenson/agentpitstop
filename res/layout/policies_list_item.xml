@@ -23,8 +23,9 @@
         android:id="@+id/last"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/company"
-        android:layout_alignBottom="@+id/company"
+        android:layout_alignBaseline="@+id/first"
+        android:layout_alignBottom="@+id/first"
+        android:layout_marginLeft="50dp"
         android:layout_toRightOf="@+id/first"
         android:textColor="@color/aps_gray"
         android:textSize="20sp"
@@ -32,10 +33,10 @@
 
     <TextView
         android:id="@+id/company"
-        android:layout_width="125dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/last"
         android:textColor="@color/aps_gray"
         android:textSize="20sp"
         android:textStyle="bold" />

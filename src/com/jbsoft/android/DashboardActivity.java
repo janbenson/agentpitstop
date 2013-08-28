@@ -1,7 +1,10 @@
 package com.jbsoft.android;
 
 import android.app.TabActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.jbsoft.library.UserFunctions;
- 
+import com.jbsoft.android.GlobalVariable;
+
 public class DashboardActivity extends TabActivity {
     UserFunctions userFunctions;
     Button btnsubmissions;
@@ -27,7 +33,13 @@ public class DashboardActivity extends TabActivity {
 	        super.onCreate(savedInstanceState);
 	        /**
 	         * Dashboard Screen for the application
-	         * */       
+	         * */
+	        GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
+            
+	        if (!apploginurl.isOnline()){
+	        	 Toast.makeText(DashboardActivity.this, "You have no internet connectivity In order for Agentpitstop Mobile to work make sure you are in range of an internet connection",Toast.LENGTH_LONG).show();
+	        	 finish();
+	        }
 	        // Check login status in database
 	            userFunctions = new UserFunctions();
 	            
@@ -37,13 +49,16 @@ public class DashboardActivity extends TabActivity {
 	            // user is not logged in show login screen
 	              Intent login = new Intent(DashboardActivity.this, LoginActivity.class);
 	              startActivity(login);
+	              if (apploginurl.isBaduser()){
+	            	  Toast.makeText(DashboardActivity.this, "Invalid Login",Toast.LENGTH_LONG).show();
+	            	  finish();
+	              }
 	            }
 	            else
 	            {
-	            	 GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
-	                 apploginurl.setState(logged_in);
+	            	 apploginurl.setState(logged_in);
 	            }
-	            
+	           
 	            setContentView(R.layout.main);
 	    	
         		GlobalVariable nextGlobalVariable = ((GlobalVariable)getApplicationContext());

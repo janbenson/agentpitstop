@@ -3,6 +3,11 @@
     package="com.jbsoft.android"
     android:versionCode="1"
     android:versionName="1.0" >
+    <supports-screens 
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:anyDensity="true"/>
    <!-- Allow to write to external drive attached to phone -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" /> 
@@ -13,6 +18,7 @@
     
     <uses-sdk android:minSdkVersion="7" 
        />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@drawable/agentpitstop" android:allowClearUserData="true" android:allowBackup="true" android:name="GlobalVariable" android:theme="@android:style/Theme.NoTitleBar">
@@ -51,7 +57,9 @@
         <activity 
             android:name=".Policies" /> 
         <activity 
-             android:name=".SingleMenuItemActivity" />         
+             android:name=".SingleMenuItemActivity" />  
+         <activity 
+             android:name=".SingleMenuItemActivity_contacts" />                     
         <activity
             android:name=".MainActivity"  />
         <activity 

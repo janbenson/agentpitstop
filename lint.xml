@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="UnknownIdInLayout">
+        <ignore path="res/layout/rateengine_new.xml" />
+    </issue>
 </lint>

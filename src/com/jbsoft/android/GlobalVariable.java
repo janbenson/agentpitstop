@@ -10,6 +10,9 @@ import org.json.JSONObject;
  *
  */
 import android.app.Application;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 public class GlobalVariable extends Application 
 {
@@ -21,7 +24,22 @@ public class GlobalVariable extends Application
       String zip;
       String smoker;
       String startDate;
-      JSONObject ratejson; 
+      JSONObject ratejson;
+      /**
+	 * @return the baduser
+	 */
+	public boolean isBaduser() {
+		return baduser;
+	}
+
+	/**
+	 * @param baduser the baduser to set
+	 */
+	public void setBaduser(boolean baduser) {
+		this.baduser = baduser;
+	}
+
+	boolean baduser;
       /**
 	 * @return the startDate
 	 */
@@ -175,4 +193,18 @@ public class GlobalVariable extends Application
 	public void setRatejson(JSONObject ratejson) {
 		this.ratejson = ratejson;
 	}
-}//End Class
+	//Check for Internet connectivity 
+    public boolean isOnline(){
+    	ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    	NetworkInfo netInfo = cm.getActiveNetworkInfo();
+    	if (netInfo != null&& netInfo.isConnected()) {
+    		return true;}
+    	else {
+    		return false;}
+    		
+    	}
+
+    		
+    	
+    }
+//End Class

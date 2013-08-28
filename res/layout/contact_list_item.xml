@@ -7,33 +7,13 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="55sp"
         android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
         android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceSmall" 
-        android:textColor="@color/aps_gray" />
-
-    <TextView
-        android:id="@+id/ext"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/name"
-        android:text="Extention"
-        android:textAppearance="?android:attr/textAppearanceSmall" 
-        android:textColor="@color/aps_gray" />
-
-
-    <TextView
-        android:id="@+id/phonenum"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/ext"
-        android:text="Phone Number"
-        android:textAppearance="?android:attr/textAppearanceSmall" 
-        android:textColor="@color/aps_gray" />
-
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/aps_gray"
+        android:textSize="15sp" />
 
 </RelativeLayout>

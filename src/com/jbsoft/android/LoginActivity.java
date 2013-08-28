@@ -10,9 +10,12 @@ import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 import com.jbsoft.library.UserFunctions;
  
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -20,10 +23,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
  
 public class LoginActivity extends Activity {
     Button btnLogin;
-    Button btnLinkToRegister;
+  //  Button btnLinkToRegister;
     EditText inputUsername;
     EditText inputPassword;
     TextView loginErrorMsg;
@@ -44,7 +48,7 @@ public class LoginActivity extends Activity {
         inputUsername = (EditText) findViewById(R.id.loginUsername);
         inputPassword = (EditText) findViewById(R.id.loginPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
+      //  btnLinkToRegister = (Button) findViewById(R.id.btnLinkToRegisterScreen);
         loginErrorMsg = (TextView) findViewById(R.id.login_error);
  
         // Login button Click Event
@@ -67,9 +71,6 @@ public class LoginActivity extends Activity {
                 loginURL = loginURL + parms;
                 GlobalVariable apploginurl = ((GlobalVariable)getApplicationContext());
                 apploginurl.setState(loginURL);
-               
-                
-                
                 
                 UserFunctions userFunction = new UserFunctions();
                
@@ -77,16 +78,19 @@ public class LoginActivity extends Activity {
                 JSONObject json = userFunction.loginUser(username, password);
  
                 // check for login response
-                try {
-                      if (json.getString(KEY_SUCCESS) != null) {
-                    	  userFunction.writeToFile(loginURL);
-                          finish();
-
-                        }else{
-                            // Error in login
-                            loginErrorMsg.setText("Incorrect username/password");
-                        }
                 
+                
+                try {
+                      if (json.getString(KEY_SUCCESS) == "true") {
+                    	  userFunction.writeToFile(loginURL);
+                    	  apploginurl.setBaduser(false);
+                          finish();
+                } else{
+                	
+                	apploginurl.setBaduser(true); 
+                	finish();
+                	 
+                    }        
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -107,8 +111,7 @@ public class LoginActivity extends Activity {
     protected void onRestart() {
         // TODO Auto-generated method stub
         super.onRestart();
-        if(DashboardActivity.isQuit)
-            finish();
+       
     }
 
 }

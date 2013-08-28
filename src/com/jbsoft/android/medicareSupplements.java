@@ -59,6 +59,7 @@ public class medicareSupplements extends ListActivity{
 	private static final String TAG_RATE_FREQUENCY = "rate_frequency";
 	private static final String TAG_DATE= "date";
 	private static final String TAG_RECRUIT= "recruit";
+
 		
 	// contacts JSONArray
 	JSONArray rates = null;
@@ -95,7 +96,7 @@ public class medicareSupplements extends ListActivity{
 	            String parmsex = "&sex=";
 	            parmsex = parmsex + Sex;
 	            String parmplan = "&plan=";
-	            parmplan = parmplan + "F";
+	            parmplan = parmplan + "Plan";
 	            String parmsmoker = "&tobacco=";
 	            parmsmoker = parmsmoker + Smoker;
 	          
@@ -144,8 +145,8 @@ public class medicareSupplements extends ListActivity{
 	                Age = apploginurl.getAge();
 	                Sex = apploginurl.getSex();
 	                Zip = apploginurl.getZip();
-	                //Plan = apploginurl.getPlan();
-	                Plan = "F";
+	                Plan = apploginurl.getPlan();
+	                //Plan = "F";
 	                Smoker = apploginurl.getSmoker();
 		            // getting JSON string from URL
 		            @SuppressWarnings("unused")
