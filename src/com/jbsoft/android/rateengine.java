@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler.Value;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 public class rateengine extends Activity {
   	
 	private static final String TAG_SELECT = "Selection";
+	private static final int defplan = 4;
 	Button btnSubmit;
 	String smokerString,sexString ,zipcodeString,ageString,planString;
 	EditText age,zipcode;
@@ -36,6 +38,7 @@ public class rateengine extends Activity {
 			chkNonSmoker = (CheckBox) findViewById(R.id.checkBox_nonsmoker);
 			plansspinner = (Spinner) findViewById(R.id.plansspinner);
 			btnSubmit = (Button) findViewById(R.id.btnSubmit);
+			plansspinner.setSelection(defplan);
 	    	plansspinner.setOnItemSelectedListener(new CustomOnItemSelectedListener()
 					{
 						@Override
@@ -77,7 +80,6 @@ public class rateengine extends Activity {
 						  
 						  Intent i = new Intent( rateengine.this, DashboardActivity.class );
 						  startActivity( i );
-						 // dialog.dismiss();
 						  finish();
 						  }
                    }); 

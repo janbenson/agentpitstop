@@ -41,20 +41,14 @@ public class perscriptionDrugplan  extends ListActivity{
 		        GlobalVariable userparm = ((GlobalVariable)getApplicationContext());
 	           
 		        setContentView(R.layout.pdp_list);
-		        // Hashmap for ListView
-		        //medsupp_List = new ArrayList<HashMap<String, String>>();	  
-		     // Hashmap for ListView
-		      // Loading INBOX in Background Thread
-		        
+		         
 
 		            // Building Parameters
 		          
 					JSONObject ratejson = userparm.getRatejson();
 					  userparm.setNextTabActivity("2");
 		          
-		            // Check your log cat for JSON reponse
-		           //Log.d("medicareSupplements JSON: ", rate.toString());
-		 
+		   
 		            try {
 		                pdp = ratejson.getJSONArray("pdprates");
 		                // looping through All messages
@@ -65,6 +59,13 @@ public class perscriptionDrugplan  extends ListActivity{
 		                    String plan = c.getString(TAG_PLAN);
 		                    String company = c.getString(TAG_COMPANY);
 		                    String lis = c.getString(TAG_LIS);
+		                    if (lis.contains("x")) {
+		                    	lis = "Yes";
+		                    }
+		                    else
+		                    {
+		                    	lis = "No";
+		                    }
 		                    String premium = c.getString(TAG_PREMIUM);
 		                    String drugdeductable = c.getString(TAG_DRUGDEDUCTABLE);
 		                    String drugbenefittype = c.getString(TAG_DRUGBENEFITTYPE);

@@ -77,6 +77,13 @@ public class medicareAdvantage extends ListActivity{
 		                    String gapcoverage = c.getString(TAG_GAPCOVERAGE);
 		                    String drugbenefitdetail = c.getString(TAG_DRUGBENIFITDETAIL);
 		                    String snp = c.getString(TAG_SNP);
+		                    if (snp.contains("x")) {
+		                    	snp = "Yes";
+		                    }
+		                    else
+		                    {
+		                    	snp = "No";
+		                    }
 		                    String snpdetail = c.getString(TAG_SNPDETAIL);
 		                    String companies = c.getString(TAG_COMPANIES);
 		                    String year = c.getString(TAG_YEAR);
@@ -117,6 +124,19 @@ public class medicareAdvantage extends ListActivity{
                 	    }
                 	});	
 
+		            Collections.sort(medadv_List, new Comparator<HashMap<String, String>>() {
+                	    public int compare(HashMap<String, String> mapping1,
+                	                       HashMap<String, String> mapping2) {
+                	        String valueOne = mapping1.get("year");
+                	        String valueTwo = mapping2.get("year");
+                	        try {
+                	            return Integer.valueOf(valueOne).compareTo(Integer.valueOf(valueTwo));
+                	        } catch(NumberFormatException e) {
+                	        	return valueOne.compareTo(valueTwo);
+                	            
+                	        }
+                	    }
+                	});	
 				
 
 	
